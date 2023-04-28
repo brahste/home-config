@@ -44,7 +44,6 @@
     fd
     lsd
     fzf
-    #autojump
     vivid
 
     # Networking & downloads
@@ -76,8 +75,7 @@
     sessionVariables = {
       LS_COLORS="$(vivid generate one-dark)";
     };
-    shellAliases = 
-    {
+    shellAliases = {
       vpn="nordvpn";
       cdv="cd ~/dev";
       cdh="cd ~/.config/home-manager";
@@ -87,10 +85,9 @@
       lt="lsd --tree";
       lta="lsd --tree --all";
     };
-    shellGlobalAliases =
-      {
-        UUID = "$(uuidgen | tr -d \\n)";
-      };
+    shellGlobalAliases = {
+      UUID = "$(uuidgen | tr -d \\n)";
+    };
     oh-my-zsh = {
       enable = true;
       #theme = "simple";
@@ -102,7 +99,6 @@
     envExtra = "[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh\nautoload -U compinit && compinit -u";
     plugins = [
       {
-        # will source zsh-autosuggestions.plugin.zsh
         name = "zsh-autosuggestions";
         src = pkgs.fetchFromGitHub {
           owner = "zsh-users";
@@ -112,7 +108,6 @@
         };
       }
       {
-        # will source zsh-autosuggestions.plugin.zsh
         name = "zsh-syntax-highlighting";
         src = pkgs.fetchFromGitHub {
           owner = "zsh-users";
@@ -121,25 +116,16 @@
           sha256 = "eRTk0o35QbPB9kOIV0iDwd0j5P/yewFFISVS/iEfP2g=";
         };
       }
-        #{
-        #name = "enhancd";
-        #file = "init.sh";
-        #src = pkgs.fetchFromGitHub {
-        #  owner = "b4b4r07";
-        #  repo = "enhancd";
-        #  rev = "v2.5.1";
-        #  sha256 = "0iqa9j09fwm6nj5rpip87x3hnvbbz9w9ajgm6wkrd5fls8fn8i5g";
-        #};
-      #{
-      #  name = "autojump";
-      #  file = "install.py";
-      #  src = pkgs.fetchFromGitHub {
-      #    owner = "wting";
-      #    repo = "autojump";
-      #    rev = "release-v22.5.3";
-      #    sha256 = "mrPMgwVkqOlKjvy1106MUKF7OlEtKdt8E9mqCg7U9+U=";
-      #  };
-      #}
+      {
+        name = "enhancd";
+        file = "init.sh";
+        src = pkgs.fetchFromGitHub {
+          owner = "b4b4r07";
+          repo = "enhancd";
+          rev = "v2.5.1";
+          sha256 = "0iqa9j09fwm6nj5rpip87x3hnvbbz9w9ajgm6wkrd5fls8fn8i5g";
+        };
+      }
     ];
   };
 
