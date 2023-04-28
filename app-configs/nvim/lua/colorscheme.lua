@@ -12,14 +12,14 @@ require('nightfox').setup({
     dim_inactive = false,   -- Non focused panes set to alternative background
     styles = {              -- Style to be applied to different syntax groups
       comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
-      conditionals = "NONE",
+      conditionals = "bold",
       constants = "NONE",
-      functions = "italic",
+      functions = "bold",
       keywords = "italic,bold",
       numbers = "NONE",
-      operators = "NONE",
+      operators = "bold",
       strings = "italic",
-      types = "NONE",
+      types = "italic",
       variables = "NONE",
     },
     inverse = {             -- Inverse highlight for different types
@@ -32,6 +32,6 @@ require('nightfox').setup({
     },
   }
 })
-vim.cmd([[colorscheme nightfox]])
+vim.cmd([[colorscheme terafox]])
 vim.cmd([[hi Normal guibg=none]])
 
