@@ -6,6 +6,8 @@ local function nkeymap(key, map)
   keymap('n', key, map, opts)
 end
 
+vim.g.mapleader = ' '
+
 -- Clipboard keybindings
 keymap('v', '<C-c>', '"+y', {})
 
