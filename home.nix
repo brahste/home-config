@@ -38,7 +38,6 @@
     rnix-lsp
 
     # Terminal
-    zsh
     ripgrep
     bat
     fd
@@ -61,6 +60,12 @@
     slack
     obsidian
   ];
+
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+  # optional for nix flakes support in home-manager 21.11, but
+  # not required in home-manager unstable or 22.05
+  #programs.direnv.nix-direnv.enableFlakes = true;
 
   programs.neovim = {
     enable = true;
@@ -90,13 +95,12 @@
     };
     oh-my-zsh = {
       enable = true;
-      #theme = "simple";
       #theme = "nanotech";
-      #theme = "mh";
-      theme = "gallois";
+      #theme = "gallois";
+      theme = "brahste";
       plugins = ["fzf"];
     };
-    envExtra = "[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh\nautoload -U compinit && compinit -u";
+    #envExtra = "prompt_nix_shell_setup";
     plugins = [
       {
         name = "zsh-autosuggestions";
