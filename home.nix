@@ -37,6 +37,11 @@
     # Language servers
     rnix-lsp
 
+    # LLVM Clang(++) toolset, includes
+    # clang, clang++, clang-format
+    llvmPackages_9.libclang
+    vimPlugins.packer-nvim
+
     # Terminal
     ripgrep
     bat
@@ -93,14 +98,22 @@
     shellGlobalAliases = {
       UUID = "$(uuidgen | tr -d \\n)";
     };
+    dirHashes = {
+      projects = "$HOME/dev/projects";
+      learning = "$HOME/dev/learning";
+      hm       = "$HOME/.config/home-manager";
+    };
     oh-my-zsh = {
       enable = true;
       #theme = "nanotech";
       #theme = "gallois";
-      theme = "brahste";
+      #theme = "bureau";
+      #theme = "powerlevel10k";
+      #theme = "brahste-bureau";
+      theme = "brahste-gallois";
       plugins = ["fzf"];
+      custom = "$HOME/.config/home-manager/app-configs/zsh-custom";
     };
-    #envExtra = "prompt_nix_shell_setup";
     plugins = [
       {
         name = "zsh-autosuggestions";
