@@ -28,19 +28,23 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    # Development tools
+    # General development tools
     git
     xclip
     lazygit
     vscode
 
+    # Languages
+    python39
+
     # Language servers
     rnix-lsp
+    cmake-language-server
 
-    # LLVM Clang(++) toolset, includes
-    # clang, clang++, clang-format
+    # C++ development tools
+    # LLVM Clang toolset, includes: clang, clang++, clang-format, clang
     llvmPackages_9.libclang
-    vimPlugins.packer-nvim
+    cmake
 
     # Terminal
     ripgrep
@@ -53,9 +57,6 @@
     # Networking & downloads
     wget
     curl
-
-    # Languages & lang-tools
-    python39
 
     # Disk usage & system monitoring
     htop
@@ -134,6 +135,10 @@
         };
       }
     ];
+  };
+
+  services.syncthing = {
+    enable = true;
   };
 
   # Manually managed configuration files, home-manager will
