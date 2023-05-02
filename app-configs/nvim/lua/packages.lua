@@ -38,10 +38,15 @@ require('packer').startup(function()
   }
   use 'mhinz/vim-signify'          -- Annotates added, removed, and modified lines
   use 'mhartington/formatter.nvim' -- For generic code formatting with :Format
+  use {
+      'williamboman/mason.nvim',
+      run = ':MasonUpdate' -- :MasonUpdate updates registry contents
+  }
   use 'kdheepak/lazygit.nvim'      -- Lazygit integration, need lazygit program installed
 
   -- IDE plugins and editor experience
   use 'mfussenegger/nvim-dap'            -- Debugger
+  use 'mfussenegger/nvim-lint'
   -- use {
   --   'nvim-treesitter/nvim-treesitter',   -- Adds syntax highlight and analysis
   --   run = ':TSUpdate',
@@ -52,10 +57,10 @@ require('packer').startup(function()
       'kyazdani42/nvim-web-devicons',    -- optional, for file icons
     },
   }
-  use { 
-    'L3MON4D3/LuaSnip',                  -- Snippet support
-    requires = {'honza/vim-snippets'} 
-  }
+  -- use { 
+  --   'L3MON4D3/LuaSnip',                  -- Snippet support
+  --   requires = {'honza/vim-snippets'} 
+  -- }
   use {
     'neovim/nvim-lspconfig',             -- Native neovim LSP support
   }
@@ -69,7 +74,6 @@ require('packer').startup(function()
     'saadparwaiz1/cmp_luasnip',
     'onsails/lspkind-nvim',
   }
-  use { 'neomake/neomake' }              -- Used for yamllint, otherwise not that useful..
 
   use { 
     'nvim-telescope/telescope.nvim',    -- For project-wide file and grep finders, use <leader>ff
