@@ -37,6 +37,8 @@
 
     # Languages
     python39
+    python39Packages.pip
+    nodejs-19_x
 
     # Language servers
     rnix-lsp
