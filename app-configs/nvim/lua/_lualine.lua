@@ -1,3 +1,4 @@
 require('lualine').setup{
-    options = {theme = 'ayu_dark'}
+    options = {theme = 'auto'}
+    -- options = {theme = 'ayu_dark'}
 }

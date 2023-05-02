@@ -33,6 +33,7 @@
     xclip
     lazygit
     vscode
+    starship
 
     # Languages
     python39
@@ -104,6 +105,7 @@
       learning = "$HOME/dev/learning";
       hm       = "$HOME/.config/home-manager";
     };
+    initExtra = "eval $(starship init zsh)";
     oh-my-zsh = {
       enable = true;
       #theme = "nanotech";
@@ -111,7 +113,7 @@
       #theme = "bureau";
       #theme = "powerlevel10k";
       #theme = "brahste-bureau";
-      theme = "brahste-gallois";
+      #theme = "brahste-gallois";
       plugins = ["fzf"];
       custom = "$HOME/.config/home-manager/app-configs/zsh-custom";
     };

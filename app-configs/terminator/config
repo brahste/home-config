@@ -11,12 +11,13 @@
   split_vert = <Primary>bar
 [profiles]
   [[default]]
-    background_color = "#152826"
+    background_color = "#131a24"
     cursor_color = "#aaaaaa"
     font = MesloLGS NF 11
     scrollbar_position = hidden
     scrollback_infinite = True
     use_system_font = False
+    show_titlebar = False
 [layouts]
   [[default]]
     [[[window0]]]
