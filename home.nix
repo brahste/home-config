@@ -68,6 +68,7 @@
     # Desktop applications
     slack
     obsidian
+    signal-desktop
   ];
 
   programs.direnv.enable = true;
