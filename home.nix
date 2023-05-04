@@ -36,18 +36,19 @@
     starship
 
     # Languages
-    python39
-    python39Packages.pip
+    python310
+    python310Packages.pip
     nodejs-19_x
 
     # Language servers
     rnix-lsp
     cmake-language-server
 
-    # C++ development tools
-    # LLVM Clang toolset, includes: clang, clang++, clang-format, clang
-    llvmPackages_9.libclang
+    # C/C++ development tools
+    gnumake
     cmake
+    # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
+    clang_15
 
     # Terminal
     ripgrep
@@ -60,6 +61,9 @@
     # Networking & downloads
     wget
     curl
+
+    # Security
+    bitwarden-cli
 
     # Disk usage & system monitoring
     htop
