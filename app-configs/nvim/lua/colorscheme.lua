@@ -14,12 +14,12 @@ require('nightfox').setup({
       comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
       conditionals = "bold",
       constants = "NONE",
-      functions = "bold",
+      functions = "italic",
       keywords = "italic,bold",
       numbers = "NONE",
       operators = "bold",
       strings = "italic",
-      types = "italic",
+      types = "NONE",
       variables = "NONE",
     },
     inverse = {             -- Inverse highlight for different types

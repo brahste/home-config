@@ -13,7 +13,7 @@
   [[default]]
     background_color = "#131a24"
     cursor_color = "#aaaaaa"
-    font = MesloLGS NF 11
+    font = MesloLGS NF 10
     scrollbar_position = hidden
     scrollback_infinite = True
     use_system_font = False

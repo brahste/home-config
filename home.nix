@@ -48,7 +48,7 @@
     gnumake
     cmake
     # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
-    clang_15
+    llvmPackages_15.libclang 
 
     # Terminal
     ripgrep

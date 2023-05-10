@@ -4,7 +4,7 @@ local dap = require('dap')
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = os.getenv("HOME")..'/.local/tools/debuggers/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7',
+  command = os.getenv("HOME")..'/.local/share/nvim/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
 }
 
 dap.configurations.cpp = {
