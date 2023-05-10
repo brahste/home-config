@@ -34,6 +34,7 @@
     lazygit
     vscode
     starship
+    awscli2
 
     # Languages
     python310
@@ -95,6 +96,8 @@
       LS_COLORS="$(vivid generate one-dark)";
     };
     shellAliases = {
+      dateutc_long="date --utc +%Y-%m-%dT%H-%M-%SZ";
+      dateutc_short="date --utc +%y%m%dT%H%M%SZ";
       vpn="nordvpn";
       cdv="cd ~/dev";
       cdh="cd ~/.config/home-manager";

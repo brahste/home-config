@@ -6,4 +6,4 @@ hm=$HOME/.config/home-manager/
 oor=$HOME/dev/oor/
 
 # Semi-temporary directories
-ngen=$HOME/dev/projects/n-gen-prototype/
+ngen=$HOME/dev/projects/ngenerate/
