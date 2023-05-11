@@ -24,7 +24,9 @@ require('configuration')
 require('colorscheme')
 require('keybindings')
 
-      
+ require('nvim-ts-autotag').setup()
+     
+
 require("nvim-surround").setup({
   -- Configuration here, or leave empty to use defaults
 })

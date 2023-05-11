@@ -50,6 +50,7 @@
     cmake
     # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
     llvmPackages_15.libclang 
+    gcc11
 
     # Terminal
     ripgrep
@@ -81,6 +82,11 @@
   # optional for nix flakes support in home-manager 21.11, but
   # not required in home-manager unstable or 22.05
   #programs.direnv.nix-direnv.enableFlakes = true;
+
+  programs.terminator = {
+    enable = true;
+    package = pkgs.terminator;
+  };
 
   programs.neovim = {
     enable = true;

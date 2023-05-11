@@ -51,6 +51,7 @@ require('packer').startup(function()
     run = function() require("nvim-treesitter.install").update { with_sync = true } end
     -- run = ':TSUpdate',
   }
+  use 'windwp/nvim-ts-autotag'
   use {
     'kyazdani42/nvim-tree.lua',          -- Tree view, accessible with <F2>
     requires = {

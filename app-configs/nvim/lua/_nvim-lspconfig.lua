@@ -28,11 +28,8 @@ nvim_lsp.cssls.setup{on_attach=on_attach, capabilities=capabilities}
 
 -- Enable Python language server
 -- Note: To use pyright you need to set the path to python3 via something like
--- `:PyrightSetPythonPath $(which python3)`
+-- `:PyrightSetPythonPath $(which python3)` or use a virtualenv
 nvim_lsp.pyright.setup{on_attach=on_attach, capabilities=capabilities}
-
--- Note: To use pylsp you will need something like pyrightconfig.json in your project root
--- nvim_lsp.pylsp.setup{on_attach=on_attach, capabilities=capabilities}
 
 -- Note: If you're having trouble getting ansible lang-server to attach,
 -- try issuing ':set ft=yaml.ansible'
