@@ -6,6 +6,7 @@
   inactive_color_offset = 0.8055555555555556
   title_use_system_font = False
   title_font = Hack Nerd Font 9
+  borderless = True
 [keybindings]
   split_horiz = <Primary>underscore
   split_vert = <Primary>bar
