@@ -5,7 +5,7 @@
   title_inactive_bg_color = "#2b3435"
   inactive_color_offset = 0.8055555555555556
   title_use_system_font = False
-  title_font = MesloLGS NF 9
+  title_font = Hack Nerd Font 9
 [keybindings]
   split_horiz = <Primary>underscore
   split_vert = <Primary>bar
