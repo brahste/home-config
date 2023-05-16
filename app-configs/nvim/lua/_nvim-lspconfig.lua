@@ -23,6 +23,9 @@ nvim_lsp.tsserver.setup{on_attach=on_attach, capabilities=capabilities}
 nvim_lsp.html.setup{on_attach=on_attach, capabilities=capabilities}
 nvim_lsp.cssls.setup{on_attach=on_attach, capabilities=capabilities}
 
+-- Enable Nix lsp
+nvim_lsp.nil_ls.setup{on_attach=on_attach, capabilities=capabilities}
+
 -- Enable docker-language-server
 -- require'lspconfig'.dockerls.setup{capabilities=capabilities}
 
@@ -41,10 +44,6 @@ nvim_lsp.ansiblels.setup({
 
 -- Protocol Buffers language server
 nvim_lsp.bufls.setup{on_attach=on_attach, capabilities=capabilities}
-
--- Nix language server
-nvim_lsp.rnix.setup{}
-
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

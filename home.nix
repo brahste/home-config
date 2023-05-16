@@ -34,6 +34,8 @@
     lazygit
     vscode
     starship
+    pre-commit # -- remove
+    redis      # -- remove
     awscli2
 
     # Languages
@@ -48,9 +50,9 @@
     # C/C++ development tools
     gnumake
     cmake
-    # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
+    # LLVM Clang toolset: clang, clang++, clang-format, clangd
     llvmPackages_15.libclang 
-    gcc11
+    #gcc11
 
     # Terminal
     ripgrep
