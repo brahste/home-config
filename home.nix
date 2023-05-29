@@ -29,7 +29,6 @@
 
   home.packages = with pkgs; [
     # General development tools
-    git
     xclip
     lazygit
     vscode
@@ -50,8 +49,8 @@
     # C/C++ development tools
     gnumake
     cmake
-    # LLVM Clang toolset: clang, clang++, clang-format, clangd
-    llvmPackages_15.libclang 
+    # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
+    #llvmPackages_15.libclang 
     #gcc11
 
     # Terminal
@@ -155,6 +154,19 @@
         };
       }
     ];
+  };
+
+  programs.git = {
+    enable = true;
+    extraConfig = {
+      alias = {
+        g = "log --all --decorate --oneline --graph --color";
+        s = "status";
+        b = "branch";
+        co = "checkout";
+      };
+      core.editor = "nvim";
+    };
   };
 
   services.syncthing = {
