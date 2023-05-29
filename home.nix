@@ -42,10 +42,6 @@
     python310Packages.pip
     nodejs-19_x
 
-    # Language servers
-    rnix-lsp
-    cmake-language-server
-
     # C/C++ development tools
     gnumake
     cmake
@@ -53,7 +49,7 @@
     #llvmPackages_15.libclang 
     #gcc11
 
-    # Terminal
+    # Terminal utilities
     ripgrep
     bat
     fd
@@ -76,6 +72,7 @@
     slack
     obsidian
     signal-desktop
+    gimp
   ];
 
   programs.direnv.enable = true;

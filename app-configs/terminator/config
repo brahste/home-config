@@ -14,8 +14,8 @@
   [[default]]
     background_color = "#131a24"
     cursor_color = "#aaaaaa"
-    #font = Hack Nerd Font 10
-    font = JetBrains Mono Nerd Font Regular 10
+    font = Hack Nerd Font 10
+    #font = JetBrainsMonoNL Nerd Font 10
     text_color = "#ffffff"
     scrollbar_position = hidden
     scrollback_infinite = True
