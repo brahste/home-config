@@ -27,12 +27,13 @@ nvim_lsp.cssls.setup{on_attach=on_attach, capabilities=capabilities}
 nvim_lsp.nil_ls.setup{on_attach=on_attach, capabilities=capabilities}
 
 -- Enable docker-language-server
--- require'lspconfig'.dockerls.setup{capabilities=capabilities}
+-- nvim_lsp.dockerls.setup{capabilities=capabilities}
+require'lspconfig'.dockerls.setup{}
 
 -- Enable Python language server
 -- Note: To use pyright you need to set the path to python3 via something like
 -- `:PyrightSetPythonPath $(which python3)` or use a virtualenv
-nvim_lsp.pyright.setup{on_attach=on_attach, capabilities=capabilities}
+nvim_lsp.pyright.setup{on_attach=on_attach, capabilities=capabilities} 
 
 -- Note: If you're having trouble getting ansible lang-server to attach,
 -- try issuing ':set ft=yaml.ansible'
@@ -54,7 +55,8 @@ end
 
 -- Diagnostics configurations
 vim.diagnostic.config({
-  virtual_text = false
+  virtual_text = false,
+  float = { border = "rounded" }
 })
 
 -- You will likely want to reduce updatetime which affects CursorHold

@@ -16,6 +16,7 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Themes + appearance
+  use 'rebelot/kanagawa.nvim'
   use 'EdenEast/nightfox.nvim'
   use 'hoob3rt/lualine.nvim'       -- Statusline plugin
   use {
