@@ -17,7 +17,6 @@ require('packages')
   require('_barbar')
   require('_lualine')
   require('_nvim-autopairs')
-  -- require('_luasnip')
   require('_alpha-nvim')
 
 require('configuration')
@@ -29,6 +28,3 @@ require('nvim-ts-autotag').setup()
 require("nvim-surround").setup({
   -- Configuration here, or leave empty to use defaults
 })
-
-
-

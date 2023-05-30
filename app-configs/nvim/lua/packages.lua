@@ -1,3 +1,4 @@
+-- Ensures packer is installed
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -15,8 +16,9 @@ require('packer').startup(function()
   -- Packer core: Lua package management tool
   use 'wbthomason/packer.nvim'
 
+  use 'github/copilot.vim'
+
   -- Themes + appearance
-  use 'rebelot/kanagawa.nvim'
   use 'EdenEast/nightfox.nvim'
   use 'hoob3rt/lualine.nvim'       -- Statusline plugin
   use {
@@ -59,10 +61,6 @@ require('packer').startup(function()
       'kyazdani42/nvim-web-devicons',    -- optional, for file icons
     },
   }
-  use { 
-    'L3MON4D3/LuaSnip',                  -- Snippet support
-    requires = {'honza/vim-snippets'} 
-  }
   use {
     'neovim/nvim-lspconfig',             -- Native neovim LSP support
   }
@@ -73,7 +71,6 @@ require('packer').startup(function()
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
-    'saadparwaiz1/cmp_luasnip',
     'onsails/lspkind-nvim',
   }
 
