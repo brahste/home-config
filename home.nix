@@ -36,7 +36,9 @@
     redis      # -- remove
     awscli2
 
+    # Language servers, formatters, linters
     nil
+    nixfmt
 
     # Languages
     python310

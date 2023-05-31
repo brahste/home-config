@@ -3,13 +3,22 @@
   // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
+          // general
+          "amazonwebservices.aws-toolkit-vscode",
+          "github.copilot-nightly",
+          "vscodevim.vim",
+          // js ts json html css
           "dbaeumer.vscode-eslint",
           "esbenp.prettier-vscode",
+          // python
           "ms-python.black-formatter",
-          "github.copilot-nightly",
+          // lua
           "yinfei.luahelper",
+          // docker
           "ms-azuretools.vscode-docker",
-          "bbenoist.Nix",
+          // nix
+          "jnoortheen.nix-ide",
+          // themes
           "terra-theme.terra-theme-vsc"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.

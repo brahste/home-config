@@ -1,6 +1,6 @@
 {
   "terminal.integrated.fontFamily": "'Hack Nerd Font'",
-  "workbench.colorTheme": "Terra - Summer [Night]",
+  "workbench.colorTheme": "Nord Deep",
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
@@ -14,11 +14,11 @@
   "[json]": {
     "editor.defaultformatter": "esbenp.prettier-vscode"
   },
-  "nix.serverPath": "$HOME/.nix-profile/bin/nil",
-    // "nix.formatterPath": "nixpkgs-fmt" // default
-    // "nix.formatterPath": ["treefmt", "--stdin", "{file}"]
-    // "nix.formatterPath": ["nix", "fmt", "--", "-"] // using flakes with `formatter = pkgs.alejandra;`
-    "nix.formatterPath": "nixfmt",
+  "nix": {
+    "enableLanguageServer": true,
+    "serverPath": "nil",
+    "formatterPath": "nixfmt"
+  },
   "window.menuBarVisibility": "toggle",
   "explorer.confirmDelete": false,
   "vim.handleKeys": {

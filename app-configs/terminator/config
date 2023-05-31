@@ -3,7 +3,7 @@
   title_transmit_bg_color = "#026b4f"
   title_receive_bg_color = "#2b3435"
   title_inactive_bg_color = "#2b3435"
-  inactive_color_offset = 0.8055555555555556
+  inactive_color_offset = 0.9555555555555556
   title_use_system_font = False
   title_font = Hack Nerd Font 9
   borderless = True
@@ -20,7 +20,7 @@
     scrollbar_position = hidden
     scrollback_infinite = True
     use_system_font = False
-    show_titlebar = False
+    show_titlebar = True
 [layouts]
   [[default]]
     [[[window0]]]
