@@ -40,7 +40,7 @@
     # Languages
     python310
     python310Packages.pip
-    nodejs-19_x
+    nodejs-16_x
 
     # C/C++ development tools
     gnumake
