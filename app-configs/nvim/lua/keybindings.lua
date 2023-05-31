@@ -56,7 +56,7 @@ keymap('n', '<leader>obd', ':BufferOrderByDirectory<CR>', opts)
 keymap('n', '<leader>obl', ':BufferOrderByLanguage<CR>', opts)
 
 -- Nvim Tree commands
-keymap('n', '<leader>t', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<C-b><C-b>', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
 
 -- LSP Config
