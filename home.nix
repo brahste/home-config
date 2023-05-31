@@ -36,6 +36,8 @@
     redis      # -- remove
     awscli2
 
+    nil
+
     # Languages
     python310
     python310Packages.pip

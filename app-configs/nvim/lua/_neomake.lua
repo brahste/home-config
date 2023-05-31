@@ -1,2 +1,0 @@
--- Enables yamllint and other 'makers'
--- vim.cmd([[call neomake#configure#automake('nrwi', 500)]])

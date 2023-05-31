@@ -1,17 +1,30 @@
 {
+  "terminal.integrated.fontFamily": "'Hack Nerd Font'",
   "workbench.colorTheme": "Terra - Summer [Night]",
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
   "[python]": {
-      "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultformatter": "ms-python.black-formatter"
   },
+  "[lua]": {
+    "editor.defaultformatter": "yinfei.luahelper"
+  },
+  "[json]": {
+    "editor.defaultformatter": "esbenp.prettier-vscode"
+  },
+  "nix.serverPath": "$HOME/.nix-profile/bin/nil",
+    // "nix.formatterPath": "nixpkgs-fmt" // default
+    // "nix.formatterPath": ["treefmt", "--stdin", "{file}"]
+    // "nix.formatterPath": ["nix", "fmt", "--", "-"] // using flakes with `formatter = pkgs.alejandra;`
+    "nix.formatterPath": "nixfmt",
   "window.menuBarVisibility": "toggle",
   "explorer.confirmDelete": false,
   "vim.handleKeys": {
-      "<C-a>": false,
-      "<C-f>": false,
-      "<C-b>": false
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-w>": false
   }
 }

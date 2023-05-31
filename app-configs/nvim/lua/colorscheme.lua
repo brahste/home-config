@@ -32,6 +32,6 @@ require('nightfox').setup({
     },
   }
 })
-vim.cmd([[colorscheme nordfox]])
+vim.cmd([[colorscheme nightfox]])
 vim.cmd([[hi Normal guibg=none]])
 

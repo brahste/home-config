@@ -7,7 +7,9 @@
           "esbenp.prettier-vscode",
           "ms-python.black-formatter",
           "github.copilot-nightly",
-          "sainnhe.everforest",
+          "yinfei.luahelper",
+          "ms-azuretools.vscode-docker",
+          "bbenoist.Nix",
           "terra-theme.terra-theme-vsc"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
