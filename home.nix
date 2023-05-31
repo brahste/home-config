@@ -31,7 +31,6 @@
     # General development tools
     xclip
     lazygit
-    vscode
     starship
     pre-commit # -- remove
     redis      # -- remove
@@ -77,9 +76,6 @@
 
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
-  # optional for nix flakes support in home-manager 21.11, but
-  # not required in home-manager unstable or 22.05
-  #programs.direnv.nix-direnv.enableFlakes = true;
 
   programs.terminator = {
     enable = true;
@@ -91,6 +87,10 @@
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
+  };
+
+  programs.vscode = {
+    enable = true;
   };
 
   programs.zsh = {
@@ -179,6 +179,12 @@
 
   xdg.configFile.terminator = {
    source = ./app-configs/terminator;
+   recursive = true;
+  };
+
+  xdg.configFile.vscode = {
+   source = ./app-configs/vscode;
+   target = "./Code/User";
    recursive = true;
   };
 }
