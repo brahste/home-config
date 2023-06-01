@@ -1,24 +1,23 @@
 {
   "terminal.integrated.fontFamily": "'Hack Nerd Font'",
-  "workbench.colorTheme": "Nord Deep",
+  "workbench.colorTheme": "Terrafuture Tokyo Night",
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
   "[python]": {
-    "editor.defaultformatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
+  "python.formatting.provider": "none",
   "[lua]": {
-    "editor.defaultformatter": "yinfei.luahelper"
+    "editor.defaultFormatter": "yinfei.luahelper"
   },
   "[json]": {
-    "editor.defaultformatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "nix": {
-    "enableLanguageServer": true,
-    "serverPath": "nil",
-    "formatterPath": "nixfmt"
-  },
+  "nix.formatterPath": "nixfmt",
+  "nix.serverPath": "nil",
+  "nix.enableLanguageServer": true,
   "window.menuBarVisibility": "toggle",
   "explorer.confirmDelete": false,
   "vim.handleKeys": {

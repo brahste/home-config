@@ -7,6 +7,11 @@
           "amazonwebservices.aws-toolkit-vscode",
           "github.copilot-nightly",
           "vscodevim.vim",
+          "trunk.io", // paid extension
+          // git
+          "trunkflow.trunk-flow",
+          // rust
+          "rust-lang.rust-analyzer",
           // js ts json html css
           "dbaeumer.vscode-eslint",
           "esbenp.prettier-vscode",
@@ -18,8 +23,13 @@
           "ms-azuretools.vscode-docker",
           // nix
           "jnoortheen.nix-ide",
+          // toml
+          "tamasfe.even-better-toml",
+          // bash shell
+          "timonwong.shellcheck",
           // themes
-          "terra-theme.terra-theme-vsc"
+          "terra-theme.terra-theme-vsc",
+          "terrafuture-themes.terrafuture-themes"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

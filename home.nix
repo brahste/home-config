@@ -41,6 +41,7 @@
     nixfmt
 
     # Languages
+    poetry
     python310
     python310Packages.pip
     nodejs-16_x
@@ -53,6 +54,7 @@
     #gcc11
 
     # Terminal utilities
+    jq
     ripgrep
     bat
     fd
@@ -189,6 +191,6 @@
   xdg.configFile.vscode = {
    source = ./app-configs/vscode;
    target = "./Code/User";
-   recursive = true;
+  recursive = true;
   };
 }
