@@ -7,7 +7,6 @@
           "amazonwebservices.aws-toolkit-vscode",
           "github.copilot-nightly",
           "vscodevim.vim",
-          "trunk.io", // paid extension
           // git
           "trunkflow.trunk-flow",
           // rust
@@ -27,6 +26,7 @@
           "tamasfe.even-better-toml",
           // bash shell
           "timonwong.shellcheck",
+          "mads-hartmann.bash-ide-vscode",
           // themes
           "terra-theme.terra-theme-vsc",
           "terrafuture-themes.terrafuture-themes"
