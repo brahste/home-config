@@ -41,9 +41,8 @@
     nixfmt
 
     # Languages
-    poetry
-    python310
-    python310Packages.pip
+    #python310
+    #python310Packages.pip
     nodejs-16_x
 
     # C/C++ development tools
@@ -74,6 +73,7 @@
     ncdu
 
     # Desktop applications
+    thunderbird
     slack
     obsidian
     signal-desktop
