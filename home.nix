@@ -46,6 +46,10 @@
     #python310Packages.pip
     nodejs_18
 
+    # Rust development tools
+    cargo
+    rustup
+
     # C/C++ development tools
     gnumake
     cmake
