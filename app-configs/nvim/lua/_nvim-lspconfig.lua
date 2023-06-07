@@ -52,7 +52,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-
 -- Diagnostics configurations
 vim.diagnostic.config({
   virtual_text = false,

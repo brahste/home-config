@@ -14,7 +14,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
 
   targets.genericLinux.enable = true;
 
@@ -31,6 +31,7 @@
     # General development tools
     xclip
     lazygit
+    lazydocker
     starship
     pre-commit # -- remove
     redis      # -- remove
@@ -43,14 +44,14 @@
     # Languages
     #python310
     #python310Packages.pip
-    nodejs-16_x
+    nodejs_18
 
     # C/C++ development tools
     gnumake
     cmake
     # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
     #llvmPackages_15.libclang 
-    #gcc11
+    gcc12
 
     # Terminal utilities
     jq
