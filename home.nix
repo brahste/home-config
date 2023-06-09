@@ -47,7 +47,6 @@
     nodejs_18
 
     # Rust development tools
-    cargo
     rustup
 
     # C/C++ development tools

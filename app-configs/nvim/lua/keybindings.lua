@@ -9,6 +9,10 @@ end
 -- Leader key
 vim.g.mapleader = ' '
 
+-- Fast scroll
+keymap('n', '<A-k>', '5k', opts)
+keymap('n', '<A-j>', '5j', opts)
+
 -- Clipboard keybindings
 keymap('v', '<C-c>', '"+y', {})
 
