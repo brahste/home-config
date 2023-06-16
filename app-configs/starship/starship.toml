@@ -1,0 +1,13 @@
+palette = 'frisky'
+
+[palettes.frisky]
+mustard = '#ffcc00'
+blue = '#00ccff'
+cyan = '#b39630'
+purple = '#24823d'
+
+[python]
+symbol = ' '
+
+[rust]
+symbol = ' '

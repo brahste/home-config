@@ -1,6 +1,6 @@
 {
   "terminal.integrated.fontFamily": "'Hack Nerd Font'",
-  "workbench.colorTheme": "Terrafuture Tokyo Night",
+  "workbench.colorTheme": "Terra - Summer [Night]",
   "editor.minimap.enabled": false,
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 4,
@@ -22,6 +22,12 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "workbench.colorCustomizations": {
+      "editorInlayHint.parameterForeground": "#806969",
+      "editorInlayHint.typeForeground": "#807e69",
+      "editorInlayHint.foreground": "#A77777"
+  },
+  "rust-analyzer.cargo.buildScripts.overrideCommand": "clippy",
   "nix.formatterPath": "nixfmt",
   "nix.serverPath": "nil",
   "nix.enableLanguageServer": true,

@@ -15,10 +15,12 @@ cmp.setup({
     ['<C-h>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ['<C-e>'] = cmp.mapping.close(),
-    ['<C-Space>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-j>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   },
 
   sources = {
+    { name = 'luasnip', group_index = 2 },
     { name = 'nvim_lsp', group_index = 2 },
     { name = 'path', group_index = 2 },
     { name = 'buffer', group_index = 3 },
@@ -34,6 +36,12 @@ cmp.setup({
         buffer = "[buf]",
       }
     }
+  },
+
+  snippet = {
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
   },
 
   experimental = {

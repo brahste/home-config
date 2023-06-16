@@ -47,11 +47,12 @@
     nodejs_18
 
     # Rust development tools
-    rustup
+    #rust-analyzer
 
     # C/C++ development tools
     gnumake
     cmake
+    pkg-config
     # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
     #llvmPackages_15.libclang 
     gcc12
@@ -64,10 +65,15 @@
     lsd
     fzf
     vivid
+    nmap
+    socat
+
+    # Misc
+    openssl
 
     # Networking & downloads
     wget
-    curl
+    curlWithGnuTls
 
     # Security
     bitwarden-cli
@@ -83,7 +89,7 @@
     signal-desktop
     gimp
   ];
-
+  
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
@@ -108,6 +114,7 @@
     autocd = true;
     sessionVariables = {
       LS_COLORS="$(vivid generate one-dark)";
+      PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig";
     };
     shellAliases = {
       dateutc_long="date --utc +%Y-%m-%dT%H-%M-%SZ";
@@ -132,12 +139,6 @@
     initExtra = "eval $(starship init zsh)";
     oh-my-zsh = {
       enable = true;
-      #theme = "nanotech";
-      #theme = "gallois";
-      #theme = "bureau";
-      #theme = "powerlevel10k";
-      #theme = "brahste-bureau";
-      #theme = "brahste-gallois";
       plugins = ["fzf"];
       custom = "$HOME/.config/home-manager/app-configs/zsh-custom";
     };
@@ -195,6 +196,11 @@
   xdg.configFile.vscode = {
    source = ./app-configs/vscode;
    target = "./Code/User";
-  recursive = true;
+   recursive = true;
+  };
+
+  xdg.configFile.starship = {
+    source = ./app-configs/starship/starship.toml;
+    target = "./starship.toml";
   };
 }

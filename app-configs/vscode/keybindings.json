@@ -30,8 +30,4 @@
         "command": "workbench.view.scm",
         "when": "workbench.scm.active"
     },
-    {
-        "key": "ctrl+b ctrl+m",
-        "command": "editor.action.toggleMinimap"
-    }
 ]
