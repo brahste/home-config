@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ssh_config_dir, project_root_dir, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -97,6 +97,11 @@
   
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
+
+  programs.ssh = {
+    enable = true;
+    includes = [ "./home-config" ];
+  };
 
   programs.terminator = {
     enable = true;
@@ -208,4 +213,11 @@
     source = ./app-configs/starship/starship.toml;
     target = "./starship.toml";
   };
+
+  home.file.".ssh/home-config" = {
+    source = ./app-configs/ssh/config;
+    #target = ".ssh/home-config";
+  };
+
+
 }
