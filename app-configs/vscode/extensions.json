@@ -28,6 +28,11 @@
           // bash shell
           "timonwong.shellcheck",
           "mads-hartmann.bash-ide-vscode",
+          // terraform
+          "4ops.terraform",
+          "erd0s.terraform-autocomplete",
+          "pjmiravalle.terraform-advanced-syntax-highlighting",
+          ""
           // themes
           "terra-theme.terra-theme-vsc",
           "terrafuture-themes.terrafuture-themes"

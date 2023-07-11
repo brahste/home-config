@@ -7,6 +7,7 @@
   title_use_system_font = False
   title_font = Hack Nerd Font 9
   borderless = False
+  handle_size = 3
 [keybindings]
   split_horiz = <Primary>underscore
   split_vert = <Primary>bar
@@ -20,7 +21,7 @@
     scrollbar_position = hidden
     scrollback_infinite = True
     use_system_font = False
-    show_titlebar = True
+    show_titlebar = False
 [layouts]
   [[default]]
     [[[window0]]]

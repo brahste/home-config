@@ -47,6 +47,7 @@
     nodejs_18
 
     # Rust development tools
+    rustup
     #rust-analyzer
 
     # C/C++ development tools
@@ -54,8 +55,12 @@
     cmake
     pkg-config
     # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
-    #llvmPackages_15.libclang 
-    gcc12
+    clang_15
+    #llvmPackages_15.libcxxClang 
+    #llvmPackages_15.libcxxStdenv
+    #llvmPackages_15.clangUseLLVM
+    #llvmPackages_15.libcxxabi
+    #gcc12
 
     # Terminal utilities
     jq
