@@ -23,6 +23,7 @@
   # with stand alone home-manager, the following line works.
   # Ref: https://discourse.nixos.org/t/home-manager-standalone-module-or-flake/23920/3
   nixpkgs.config.allowUnfreePredicate = pkg: true;
+  #nixpkgs.config.allowUnfree = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
