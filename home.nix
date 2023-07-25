@@ -138,6 +138,7 @@
       la="lsd -la";
       lt="lsd --tree";
       lta="lsd --tree --all";
+      watch="watch --color";
     };
     shellGlobalAliases = {
       UUID = "$(uuidgen | tr -d \\n)";
