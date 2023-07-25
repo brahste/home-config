@@ -22,7 +22,7 @@ git clone git@github.com:brahste/home-config.git ~/.config/home-manager
 nix run ~/.config/home-manager#homeConfigurations.braden.activationPackage
 ```
 
-### Additional Setups
+### Additional Steps
 Some additional steps are required.
 1. Install the [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases) and install it
 ```bash
@@ -31,3 +31,9 @@ fc-cache
 ```
 2. Change your default shell to zsh. First, add the output of `$(which zsh)` to `/etc/shells`. Then run `chsh -s $(which zsh)`.
 
+
+### Optional Steps
+- Install visual studio code extensions managed in **app-config/vscode/extensions.json**.
+  ```bash
+  hm$ ./scripts/install-vscode-extensions.sh
+  ```

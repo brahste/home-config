@@ -1,10 +1,10 @@
+Host bstef-oor.gitlab.com
+  HostName gitlab.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_ed25519_oor.pub
+
 Host gitlab.com
   HostName gitlab.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_ed25519.pub
-
-Host brahste.gitlab.com
-  HostName gitlab.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_ed25519_gitlab_brahste
+  IdentityFile ~/.ssh/id_ed25519_gitlab_brahste.pub
 
