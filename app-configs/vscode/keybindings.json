@@ -30,4 +30,29 @@
         "command": "workbench.view.scm",
         "when": "workbench.scm.active"
     },
+    {
+        "key": "alt+right",
+        "command": "editor.action.inlineSuggest.showNext",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "right",
+        "command": "-editor.action.inlineSuggest.showNext",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "escape",
+        "command": "-aws.codeWhisperer.rejectCodeSuggestion",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "alt+left",
+        "command": "editor.action.inlineSuggest.showPrevious",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "left",
+        "command": "-editor.action.inlineSuggest.showPrevious",
+        "when": "CODEWHISPERER_ENABLED && inlineSuggestionVisible && !editorReadonly"
+    }
 ]

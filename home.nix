@@ -116,10 +116,6 @@
     defaultEditor = true;
   };
 
-  programs.vscode = {
-    enable = true;
-  };
-
   programs.zsh = {
     enable = true;
     autocd = true;
@@ -205,12 +201,6 @@
    recursive = true;
   };
 
-  xdg.configFile.vscode = {
-   source = ./app-configs/vscode;
-   target = "./Code/User";
-   recursive = true;
-  };
-
   xdg.configFile.starship = {
     source = ./app-configs/starship/starship.toml;
     target = "./starship.toml";
@@ -218,7 +208,6 @@
 
   home.file.".ssh/home-config" = {
     source = ./app-configs/ssh/config;
-    #target = ".ssh/home-config";
   };
 
 
