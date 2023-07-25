@@ -1,6 +1,4 @@
 vim.opt.termguicolors = true
--- require('colorbuddy').colorscheme('onebuddy')
--- vim.o.background = 'dark'
 
 require('nightfox').setup({
   options = {

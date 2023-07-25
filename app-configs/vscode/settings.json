@@ -27,7 +27,9 @@
       "editorInlayHint.typeForeground": "#807e69",
       "editorInlayHint.foreground": "#A77777"
   },
-  "rust-analyzer.cargo.buildScripts.overrideCommand": "clippy",
+  "rust-analyzer.cargo.buildScripts.overrideCommand": [
+    "clippy"
+  ],
   "nix.formatterPath": "nixfmt",
   "nix.serverPath": "nil",
   "nix.enableLanguageServer": true,

@@ -23,4 +23,4 @@ local opts = {
 
 require('rust-tools').setup(opts)
 
-vim.g['rustfmt_autosave'] = 1
+-- vim.g['rustfmt_autosave'] = 1

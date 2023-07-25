@@ -33,8 +33,8 @@
     lazygit
     lazydocker
     starship
-    pre-commit # -- remove
-    redis      # -- remove
+    #pre-commit # -- remove
+    #redis      # -- remove
     awscli2
 
     # Language servers, formatters, linters
@@ -44,10 +44,10 @@
     # Languages
     #python310
     #python310Packages.pip
-    nodejs_18
+    #nodejs_18
 
     # Rust development tools
-    rustup
+    #rustup
     #rust-analyzer
 
     # C/C++ development tools
@@ -55,7 +55,8 @@
     cmake
     pkg-config
     # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
-    clang_15
+    #clang_15
+    #clang-tools_14
     #llvmPackages_15.libcxxClang 
     #llvmPackages_15.libcxxStdenv
     #llvmPackages_15.clangUseLLVM
@@ -108,6 +109,69 @@
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
+    plugins = with pkgs.vimPlugins; [
+      copilot-vim
+      nvim-web-devicons
+      bufferline-nvim
+      mason-lspconfig-nvim
+      plenary-nvim
+      telescope-fzf-native-nvim
+      cmp-nvim-lsp
+      neoformat
+      lazygit-nvim
+      nvim-treesitter
+      nvim-treesitter.withAllGrammars
+      # statix # how work?
+      {
+        plugin = mason-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/mason.lua;
+        type = "lua";
+      }
+      {
+        plugin = nightfox-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/nightfox.lua;
+        type = "lua";
+      }
+      {
+       plugin = nvim-tree-lua;
+       config = "require'nvim-tree'.setup{}";
+       type = "lua";
+      }
+      {
+        plugin = trouble-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/trouble.lua;
+        type = "lua";
+      }
+      {
+        plugin = nvim-lspconfig;
+        config = builtins.readFile ./app-configs/nvim/lua/lspconfig.lua;
+        type = "lua";
+      }
+      {
+        plugin = nvim-lint;
+        config = builtins.readFile ./app-configs/nvim/lua/nvim-lint.lua;
+        type = "lua";
+      }
+      {
+        plugin = telescope-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/telescope.lua;
+        type = "lua";
+      }
+      {
+        plugin = lualine-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/lualine.lua;
+        type = "lua";
+      }
+      {
+        plugin = alpha-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/alpha.lua;
+        type = "lua";
+      }
+    ];
+    extraLuaConfig = ''
+      ${builtins.readFile ./app-configs/nvim/lua/keybindings.lua}
+      ${builtins.readFile ./app-configs/nvim/lua/configuration.lua}
+    '';
   };
 
   programs.vscode = {
@@ -188,10 +252,10 @@
 
   # Manually managed configuration files, home-manager will
   # place these files/directories in ~/.config/ 
-  xdg.configFile.nvim = {
-    source = ./app-configs/nvim;
-    recursive = true;
-  };
+#  xdg.configFile.nvim = {
+#    source = ./app-configs/nvim;
+#    recursive = true;
+#  };
 
   xdg.configFile.terminator = {
    source = ./app-configs/terminator;

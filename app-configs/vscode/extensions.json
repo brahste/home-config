@@ -3,14 +3,19 @@
   // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
-          // general
+          // AI integrations
           "amazonwebservices.aws-toolkit-vscode",
-          "github.copilot-nightly",
+          "GitHub.copilot",
+          "GitHub.copilot-chat",
+          "GitHub.copilot-labs",
+          // General
           "vscodevim.vim",
+          "usernamehw.errorlens",
           // git
           "trunkflow.trunk-flow",
           // rust
           "rust-lang.rust-analyzer",
+          "serayuzgur.crates",
           // js ts json html css
           "dbaeumer.vscode-eslint",
           "esbenp.prettier-vscode",
@@ -23,16 +28,17 @@
           "ms-azuretools.vscode-docker",
           // nix
           "jnoortheen.nix-ide",
+          "arrterian.nix-env-selector",
           // toml
           "tamasfe.even-better-toml",
           // bash shell
           "timonwong.shellcheck",
           "mads-hartmann.bash-ide-vscode",
           // terraform
+          "hashicorp.terraform",
           "4ops.terraform",
           "erd0s.terraform-autocomplete",
           "pjmiravalle.terraform-advanced-syntax-highlighting",
-          ""
           // themes
           "terra-theme.terra-theme-vsc",
           "terrafuture-themes.terrafuture-themes"
