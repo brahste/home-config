@@ -1,6 +1,7 @@
 {
   "terminal.integrated.fontFamily": "'Hack Nerd Font'",
   "workbench.colorTheme": "Terra - Summer [Night]",
+  "workbench.panel.defaultLocation": "right",
   "editor.minimap.enabled": false,
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 4,
