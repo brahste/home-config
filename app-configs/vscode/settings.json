@@ -30,6 +30,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.colorCustomizations": {
+      "editorInlayHint.background": "#ffffff00",
       "editorInlayHint.parameterForeground": "#806969",
       "editorInlayHint.typeForeground": "#807e69",
       "editorInlayHint.foreground": "#A77777"
