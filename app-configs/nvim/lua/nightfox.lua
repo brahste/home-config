@@ -2,7 +2,8 @@ vim.opt.termguicolors = true
 
 local palettes = {
   nightfox = {
-    cyan = { base = "#4f9c71", bright = "#4f9c71", dim = "#4f9c71" },
+    -- cyan = { base = "#4f9c71", bright = "#4f9c71", dim = "#4f9c71" },
+    cyan = { base = "#71a387", bright = "#71a387", dim = "#71a387" },
   }
 }
 
@@ -23,7 +24,7 @@ require('nightfox').setup({
       numbers = "NONE",
       operators = "bold",
       strings = "italic",
-      types = "NONE",
+      types = "bold",
       variables = "NONE",
     },
     inverse = {             -- Inverse highlight for different types
