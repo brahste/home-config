@@ -27,17 +27,17 @@ keymap('n', '<c-k>', '<c-w>k', opts)
 keymap('n', '<c-l>', '<c-w>l', opts)
 
 -- LSP Keybindings
--- nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
--- nkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>')
--- nkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>')
--- nkeymap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
--- nkeymap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
--- nkeymap('gr', ':lua vim.lsp.buf.references()<cr>')
--- nkeymap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
--- nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
--- nkeymap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
--- nkeymap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
--- nkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
+nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
+nkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>')
+nkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>')
+nkeymap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
+nkeymap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
+nkeymap('gr', ':lua vim.lsp.buf.references()<cr>')
+nkeymap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
+nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
+nkeymap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
+nkeymap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
+nkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 
 -- Telescope keybindings
 nkeymap('<leader>ff', ':Telescope find_files<cr>')
@@ -45,16 +45,15 @@ nkeymap('<leader>fg', ':Telescope live_grep<cr>')
 nkeymap('<leader>fb', ':Telescope buffers<cr>')
 nkeymap('<leader>fh', ':Telescope help_tags<cr>')
 
-keymap("n", "<A-.>", ":tabn<CR>", { noremap = true })
-keymap("n", "<A-,>", ":tabp<CR>", { noremap = true })
-
-vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
--- move current tab to previous position
-vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
--- move current tab to next position
-vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
+-- Barbar keybindings for moving tabs
+-- Move to previous/next
+keymap('n', '<A-,>', ':BufferPrevious<CR>', opts)
+keymap('n', '<A-.>', ':BufferNext<CR>', opts)
+-- Re-order to previous/next
+keymap('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
+keymap('n', '<A->>', ' :BufferMoveNext<CR>', opts)
+-- Close buffer
+keymap('n', '<A-c>', ':BufferClose<CR>', opts)
 
 -- Nvim Tree commands
 keymap('n', '<leader>bb', ':NvimTreeToggle<CR>', opts)

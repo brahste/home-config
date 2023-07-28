@@ -33,8 +33,6 @@
     lazygit
     lazydocker
     starship
-    #pre-commit # -- remove
-    #redis      # -- remove
     awscli2
 
     # Language servers, formatters, linters
@@ -110,6 +108,14 @@
     vimAlias = true;
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
+      {
+        plugin = nvim-treesitter;
+        config = builtins.readFile ./app-configs/nvim/lua/treesitter.lua;
+        type = "lua";
+      }
+      nvim-treesitter-parsers.cpp
+      nvim-treesitter-textobjects
+      nvim-treesitter.withAllGrammars
       copilot-vim
       nvim-web-devicons
       bufferline-nvim
@@ -119,9 +125,8 @@
       cmp-nvim-lsp
       neoformat
       lazygit-nvim
-      tabby-nvim
-      nvim-treesitter
-      nvim-treesitter.withAllGrammars
+      #tabby-nvim
+      barbar-nvim
       # statix # how work?
       {
         plugin = mason-nvim;

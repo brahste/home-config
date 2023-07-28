@@ -1,5 +1,11 @@
 vim.opt.termguicolors = true
 
+local palettes = {
+  nightfox = {
+    cyan = { base = "#4f9c71", bright = "#4f9c71", dim = "#4f9c71" },
+  }
+}
+
 require('nightfox').setup({
   options = {
     -- Compiled file's destination location
@@ -28,8 +34,10 @@ require('nightfox').setup({
     modules = {             -- List of various plugins and additional options
       -- ...
     },
-  }
+  },
+  palettes = palettes
 })
+
 vim.cmd([[colorscheme nightfox]])
 vim.cmd([[hi Normal guibg=none]])
 
