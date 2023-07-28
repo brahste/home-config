@@ -20,7 +20,7 @@ keymap('v', '<C-c>', '"+y', {})
 keymap('n', '<c-s>', ':w<CR>', {})
 keymap('i', '<c-s>', '<Esc>:w<CR>a', {})
 
--- Window adjustment keybindings
+-- Window change keybindings
 keymap('n', '<c-j>', '<c-w>j', opts)
 keymap('n', '<c-h>', '<c-w>h', opts)
 keymap('n', '<c-k>', '<c-w>k', opts)
@@ -45,19 +45,16 @@ nkeymap('<leader>fg', ':Telescope live_grep<cr>')
 nkeymap('<leader>fb', ':Telescope buffers<cr>')
 nkeymap('<leader>fh', ':Telescope help_tags<cr>')
 
--- Barbar keybindings for moving tabs
--- Move to previous/next
--- keymap('n', '<A-,>', ':BufferPrevious<CR>', opts)
--- keymap('n', '<A-.>', ':BufferNext<CR>', opts)
--- -- Re-order to previous/next
--- keymap('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
--- keymap('n', '<A->>', ' :BufferMoveNext<CR>', opts)
--- -- Close buffer
--- keymap('n', '<A-c>', ':BufferClose<CR>', opts)
--- -- Sort automatically by...
--- keymap('n', '<leader>obn', ':BufferOrderByBufferNumber<CR>', opts)
--- keymap('n', '<leader>obd', ':BufferOrderByDirectory<CR>', opts)
--- keymap('n', '<leader>obl', ':BufferOrderByLanguage<CR>', opts)
+keymap("n", "<A-.>", ":tabn<CR>", { noremap = true })
+keymap("n", "<A-,>", ":tabp<CR>", { noremap = true })
+
+vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
+-- move current tab to previous position
+vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
+-- move current tab to next position
+vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
 
 -- Nvim Tree commands
 keymap('n', '<leader>bb', ':NvimTreeToggle<CR>', opts)

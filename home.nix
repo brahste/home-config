@@ -119,6 +119,7 @@
       cmp-nvim-lsp
       neoformat
       lazygit-nvim
+      tabby-nvim
       nvim-treesitter
       nvim-treesitter.withAllGrammars
       # statix # how work?
@@ -174,9 +175,9 @@
     '';
   };
 
-  programs.vscode = {
-    enable = true;
-  };
+#  programs.vscode = {
+#    enable = true;
+#  };
 
   programs.zsh = {
     enable = true;
@@ -262,11 +263,11 @@
    recursive = true;
   };
 
-  xdg.configFile.vscode = {
-   source = ./app-configs/vscode;
-   target = "./Code/User";
-   recursive = true;
-  };
+ # xdg.configFile.vscode = {
+ #  source = ./app-configs/vscode;
+ #  target = "./Code/User";
+ #  recursive = true;
+ # };
 
   xdg.configFile.starship = {
     source = ./app-configs/starship/starship.toml;
