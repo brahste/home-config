@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ssh_config_dir, project_root_dir, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -23,6 +23,7 @@
   # with stand alone home-manager, the following line works.
   # Ref: https://discourse.nixos.org/t/home-manager-standalone-module-or-flake/23920/3
   nixpkgs.config.allowUnfreePredicate = pkg: true;
+  #nixpkgs.config.allowUnfree = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -96,6 +97,11 @@
   
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
+
+  programs.ssh = {
+    enable = true;
+    includes = [ "./home-config" ];
+  };
 
   programs.terminator = {
     enable = true;
@@ -180,10 +186,6 @@
     '';
   };
 
-#  programs.vscode = {
-#    enable = true;
-#  };
-
   programs.zsh = {
     enable = true;
     autocd = true;
@@ -202,6 +204,7 @@
       la="lsd -la";
       lt="lsd --tree";
       lta="lsd --tree --all";
+      watch="watch --color";
     };
     shellGlobalAliases = {
       UUID = "$(uuidgen | tr -d \\n)";
@@ -268,14 +271,14 @@
    recursive = true;
   };
 
- # xdg.configFile.vscode = {
- #  source = ./app-configs/vscode;
- #  target = "./Code/User";
- #  recursive = true;
- # };
-
   xdg.configFile.starship = {
     source = ./app-configs/starship/starship.toml;
     target = "./starship.toml";
   };
+
+  home.file.".ssh/home-config" = {
+    source = ./app-configs/ssh/config;
+  };
+
+
 }
