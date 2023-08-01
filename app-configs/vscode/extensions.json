@@ -26,11 +26,14 @@
           "yinfei.luahelper",
           // docker
           "ms-azuretools.vscode-docker",
+          "jeff-hykin.better-dockerfile-syntax",
           // nix
           "jnoortheen.nix-ide",
           "arrterian.nix-env-selector",
           // toml
           "tamasfe.even-better-toml",
+          // yaml
+          "redhat.vscode-yaml",
           // bash shell
           "timonwong.shellcheck",
           "mads-hartmann.bash-ide-vscode",

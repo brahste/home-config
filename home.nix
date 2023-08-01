@@ -35,6 +35,7 @@
     lazydocker
     starship
     awscli2
+    kubectl
 
     # Language servers, formatters, linters
     nil
