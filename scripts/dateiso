@@ -1,0 +1,82 @@
+#!/bin/bash
+
+function show_help() {
+    echo ""
+    echo "Usage: dateiso [--utc | --local] [--long | --short]"
+    echo "Print the current datetime in ISO 8601 format."
+    echo ""
+    echo "Options:"
+    echo "  --utc        Show date in UTC timezone."
+    echo "  --local      Show date in local timezone."
+    echo "  --long       Use long date format: YYYY_MM_DDTHH_MM_SSZ."
+    echo "  --short      Use short date format: YYMMDDTHHMMSSZ."
+    echo "  --help       Show this help message."
+}
+
+function utc_long() {
+    date --utc +"%Y_%m_%dT%H_%M_%SZ" 2>/dev/null
+}
+
+function utc_short() {
+    date --utc +"%y%m%dT%H%M%SZ" 2>/dev/null
+}
+
+function local_long() {
+    date +"%Y_%m_%dT%H_%M_%S%z" 2>/dev/null
+}
+
+function local_short() {
+    date +"%y%m%dT%H%M%S%z" 2>/dev/null
+}
+
+function main() {
+    local timezone="utc" # Default timezone is utc
+    local date_format="long" # Default date format is long
+
+    # Check for --help option
+    if [ "$1" == "--help" ]; then
+        show_help
+        return 0
+    fi
+
+    # Check for --utc or --local option
+    if [ "$1" == "--utc" ]; then
+        timezone="utc"
+        shift
+    elif [ "$1" == "--local" ]; then
+        timezone="local"
+        shift
+    fi
+
+    # Check for --long or --short option
+    if [ "$1" == "--long" ]; then
+        date_format="long"
+        shift
+    elif [ "$1" == "--short" ]; then
+        date_format="short"
+        shift
+    fi
+
+    # if [ -z "$1" ]; then
+    #     echo "Error: No options provided."
+    #     show_help
+    #     return 1
+    # fi
+
+    # Convert the date string based on the chosen timezone and format
+    if [ "$timezone" == "utc" ]; then
+        if [ "$date_format" == "long" ]; then
+            utc_long "$date_string"
+        else
+            utc_short "$date_string"
+        fi
+    else
+        if [ "$date_format" == "long" ]; then
+            local_long "$date_string"
+        else
+            local_short "$date_string"
+        fi
+    fi
+}
+
+main "$@"

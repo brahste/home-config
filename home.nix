@@ -195,8 +195,6 @@
       PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig";
     };
     shellAliases = {
-      dateutc_long="date --utc +%Y-%m-%dT%H-%M-%SZ";
-      dateutc_short="date --utc +%y%m%dT%H%M%SZ";
       vpn="nordvpn";
       cdv="cd ~/dev";
       cdh="cd ~/.config/home-manager";
@@ -206,6 +204,7 @@
       lt="lsd --tree";
       lta="lsd --tree --all";
       watch="watch --color";
+      ip="ip --color";
     };
     shellGlobalAliases = {
       UUID = "$(uuidgen | tr -d \\n)";
@@ -215,7 +214,10 @@
       learning = "$HOME/dev/learning";
       hm       = "$HOME/.config/home-manager";
     };
-    initExtra = "eval $(starship init zsh)";
+    initExtra = ''
+      eval $(starship init zsh)
+      PATH="$PATH:$HOME/.local/bin"
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = ["fzf"];
@@ -245,12 +247,16 @@
 
   programs.git = {
     enable = true;
+    diff-so-fancy = {
+      enable = true;
+    };
     extraConfig = {
       alias = {
         g = "log --all --decorate --oneline --graph --color";
         s = "status";
         b = "branch";
         co = "checkout";
+        aa = "!git add --all && git status";
       };
       core.editor = "nvim";
     };
@@ -259,13 +265,6 @@
   services.syncthing = {
     enable = true;
   };
-
-  # Manually managed configuration files, home-manager will
-  # place these files/directories in ~/.config/ 
-#  xdg.configFile.nvim = {
-#    source = ./app-configs/nvim;
-#    recursive = true;
-#  };
 
   xdg.configFile.terminator = {
    source = ./app-configs/terminator;
@@ -281,5 +280,12 @@
     source = ./app-configs/ssh/config;
   };
 
+  home.file.".ssh/oor-config" = {
+    source = ./app-configs/ssh/oor-config;
+  };
 
+  home.file.".local/bin" = {
+    source = ./scripts;
+    recursive = true;
+  };
 }
