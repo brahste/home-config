@@ -276,12 +276,16 @@
     target = "./starship.toml";
   };
 
-  home.file.".ssh/home-config" = {
-    source = ./app-configs/ssh/config;
-  };
-
-  home.file.".ssh/oor-config" = {
-    source = ./app-configs/ssh/oor-config;
+#  home.file.".ssh/home-config" = {
+#    source = ./app-configs/ssh/config;
+#  };
+#
+#  home.file.".ssh/oor-config" = {
+#    source = ./app-configs/ssh/oor-config;
+#  };
+  home.file.".ssh" = {
+    source = ./app-configs/ssh;
+    recursive = true;
   };
 
   home.file.".local/bin" = {
