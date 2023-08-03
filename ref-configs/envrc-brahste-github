@@ -5,5 +5,5 @@ export GIT_COMMITER_EMAIL='49038751+brahste@users.noreply.github.com'
 export GIT_COMMITER_NAME='Braden Stefanuk'
 export GIT_COMMITER_DATE=$(date)
 export EMAIL='49038751+brahste@users.noreply.github.com'
-export GIT_SSH='${HOME}/.config/home-manager/scripts/ssh-cmd-brahste-github.sh'
+export GIT_SSH='ssh-cmd-brahste-github.sh'
 

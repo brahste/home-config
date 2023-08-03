@@ -1,0 +1,9 @@
+export GIT_AUTHOR_EMAIL='7170961-bstef@users.noreply.gitlab.com'
+export GIT_AUTHOR_NAME='Braden Stefanuk'
+export GIT_AUTHOR_DATE=$(date)
+export GIT_COMMITER_EMAIL='7170961-bstef@users.noreply.gitlab.com'
+export GIT_COMMITER_NAME='Braden Stefanuk'
+export GIT_COMMITER_DATE=$(date)
+export EMAIL='7170961-bstef@users.noreply.gitlab.com'
+export GIT_SSH='ssh-cmd-bstef-gitlab.sh'
+

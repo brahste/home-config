@@ -1,0 +1,57 @@
+#!/bin/bash
+
+function show_help() {
+    echo ""
+    echo "Usage: $0 [--brahste-github | --brahste-gitlab | --bstef-gitlab]"
+    echo "Initializes a base .envrc file with the specified profile."
+    echo ""
+    echo "Options:"
+    echo "  --brahste-github  Initialize for brahste's GitHub profile."
+    echo "  --brahste-gitlab  Initialize for brahste's GitLab profile."
+    echo "  --bstef-gitlab    Initialize for bstef's GitLab profile."
+    echo "  --help            Show this help message."
+}
+
+# Check if exactly one option or argument is provided
+function enforce_single_option_or_argument() {
+    local num_arguments="$#"
+
+    if [ "$num_arguments" -ne 1 ]; then
+        echo "Error: Please provide exactly one option."
+        show_help
+        exit 1
+    fi
+}
+
+function main() {
+    enforce_single_option_or_argument "$@"
+
+    local ref_envrc_path="$HOME/.config/home-manager/ref-configs"
+
+    # Check for --help option
+    if [ "$1" == "--help" ]; then
+        show_help
+        return 0
+    fi
+
+    # Check if more than one profile is provided
+    if [ -z !"$1" ]; then
+        echo "Error: Too many arguments, only specify one profile."
+        show_help
+        return 1
+    fi
+
+    if [ "$1" == "--brahste-github" ]; then
+      cp ${ref_envrc_path}/envrc-brahste-github .envrc 
+    elif [ "$1" == "--brahste-gitlab" ]; then
+      cp ${ref_envrc_path}/envrc-brahste-gitlab .envrc 
+    elif [ "$1" == "--bstef-gitlab" ]; then
+      cp ${ref_envrc_path}/envrc-bstef-github .envrc 
+    else
+      echo "Error: Invalid profile: $1"
+      show_help
+      return 1
+    fi
+}
+
+main "$@"

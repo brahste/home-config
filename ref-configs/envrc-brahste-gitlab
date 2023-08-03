@@ -1,0 +1,9 @@
+export GIT_AUTHOR_EMAIL='FILL_THIS_OUT'
+export GIT_AUTHOR_NAME='Braden Stefanuk'
+export GIT_AUTHOR_DATE=$(date)
+export GIT_COMMITER_EMAIL='FILL_THIS_OUT'
+export GIT_COMMITER_NAME='Braden Stefanuk'
+export GIT_COMMITER_DATE=$(date)
+export EMAIL='FILL_THIS_OUT'
+export GIT_SSH='ssh-cmd-brahste-gitlab.sh'
+
