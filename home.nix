@@ -75,6 +75,7 @@
     socat
 
     # Misc
+    inotify-tools
     openssl
 
     # Networking & downloads
