@@ -1,6 +1,5 @@
-local lspkind = require('lspkind')
-
-local cmp = require"cmp"
+local lspkind = require'lspkind'
+local cmp = require'cmp'
 cmp.setup({
   mapping = {
     ['<Tab>'] = cmp.mapping(function(fallback)
@@ -10,13 +9,17 @@ cmp.setup({
         fallback()
       end
     end, { "i" }),
-    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-h>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end, { "i" }),
     ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ['<C-e>'] = cmp.mapping.close(),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-j>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   },
 
   sources = {
@@ -29,6 +32,9 @@ cmp.setup({
   formatting = {
     format = lspkind.cmp_format {
       with_text = true,
+      mode = 'symbol',
+      maxwidth = 80,
+      ellipsis_char = '…',
       menu = {
         nvim_lsp = "[LSP]",
         nvim_lua = "[API]",

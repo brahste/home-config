@@ -44,7 +44,7 @@
     # Languages
     #python310
     #python310Packages.pip
-    #nodejs_18
+    nodejs_18
 
     # Rust development tools
     #rustup
@@ -54,13 +54,7 @@
     gnumake
     cmake
     pkg-config
-    # LLVM Clang toolset includes: clang, clang++, clang-format, clangd
     #clang_15
-    #clang-tools_14
-    #llvmPackages_15.libcxxClang 
-    #llvmPackages_15.libcxxStdenv
-    #llvmPackages_15.clangUseLLVM
-    #llvmPackages_15.libcxxabi
     #gcc12
 
     # Terminal utilities
@@ -75,7 +69,6 @@
     socat
 
     # Misc
-    inotify-tools
     openssl
 
     # Networking & downloads
@@ -130,10 +123,20 @@
       mason-lspconfig-nvim
       plenary-nvim
       telescope-fzf-native-nvim
+      {
+        plugin = nvim-cmp;
+        config = builtins.readFile ./app-configs/nvim/lua/cmp.lua;
+        type = "lua";
+      }
       cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      lspkind-nvim
+      luasnip
       neoformat
+      vim-commentary
       lazygit-nvim
-      #tabby-nvim
       barbar-nvim
       # statix # how work?
       {

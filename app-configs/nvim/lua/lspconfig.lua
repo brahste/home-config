@@ -46,8 +46,6 @@ nvim_lsp.ansiblels.setup({
 -- Protocol Buffers language server
 nvim_lsp.bufls.setup{on_attach=on_attach, capabilities=capabilities}
 
-
-
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
