@@ -32,13 +32,14 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
 unzip Hack.zip -d ~/.local/share/fonts
 fc-cache
 ```
-2. Change your default shell to zsh. First, add the output of `$(which zsh)` to `/etc/shells`. Then run `chsh -s $(which zsh)`.
-
+2. Change your default shell to zsh.
+```bash
+echo $(which zsh) | sudo tee -a /etc/shells
+chsh -s $(which zsh)
+```
 
 ### Optional Steps
 - Install visual studio code extensions managed in **app-config/vscode/extensions.json**.
-  ```bash
-  hm$ ./scripts/install-vscode-extensions.sh
-  ```
-
-- 
+```bash
+hm$ ./scripts/install-vscode-extensions.sh
+```
