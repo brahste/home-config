@@ -68,8 +68,11 @@
     nmap
     socat
 
-    # Misc
+    # Security
     openssl
+
+    # Battery management
+    #tlp
 
     # Networking & downloads
     wget

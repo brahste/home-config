@@ -6,7 +6,7 @@
   inactive_color_offset = 0.9555555555555556
   title_use_system_font = False
   title_font = Hack Nerd Font 9
-  borderless = False
+  borderless = True
   handle_size = 3
 [keybindings]
   split_horiz = <Primary>underscore
