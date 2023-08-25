@@ -2,8 +2,11 @@ vim.opt.termguicolors = true
 
 local palettes = {
   nightfox = {
-    -- cyan = { base = "#4f9c71", bright = "#4f9c71", dim = "#4f9c71" },
-    cyan = { base = "#71a387", bright = "#71a387", dim = "#71a387" },
+    cyan = { base = "#75bd93", bright = "#75bd93", dim = "#75bd93" },
+    yellow = { base = "#f1bf4b", bright = "#f1bf4b", dim = "#f1bf4b" },
+    red = { base = "#d96840", bright = "#d96840", dim = "#d96840" },
+    pink = { base = "#f99b48", bright = "#f99b48", dim = "#f99b48" },
+    orange = { base = "#f99b48", bright = "#f99b48", dim = "#f99b48" },
   }
 }
 

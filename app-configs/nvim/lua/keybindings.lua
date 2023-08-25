@@ -60,8 +60,8 @@ keymap('n', '<leader>bb', ':NvimTreeToggle<CR>', opts)
 -- keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
 
 -- LSP Config
--- keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
--- keymap('n', 'L', '<cmd>lua vim.diagnostic.open_float(nil, {focus=false})<CR>', opts)
+keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+keymap('n', 'L', '<cmd>lua vim.diagnostic.open_float(nil, {focus=false})<CR>', opts)
 
 -- Debug Adapter commands
 -- vim.keymap.set('n', '<F5>', function() require('dap').continue() end)

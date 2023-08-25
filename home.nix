@@ -106,6 +106,11 @@
     package = pkgs.terminator;
   };
 
+  programs.vscode = {
+    enable = true;
+  };
+
+
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -123,7 +128,6 @@
       copilot-vim
       nvim-web-devicons
       bufferline-nvim
-      mason-lspconfig-nvim
       plenary-nvim
       telescope-fzf-native-nvim
       {
@@ -137,7 +141,6 @@
       cmp-cmdline
       lspkind-nvim
       luasnip
-      neoformat
       vim-commentary
       lazygit-nvim
       barbar-nvim
@@ -145,6 +148,17 @@
       {
         plugin = mason-nvim;
         config = builtins.readFile ./app-configs/nvim/lua/mason.lua;
+        type = "lua";
+      }
+      mason-lspconfig-nvim
+      {
+        plugin = lsp-format-nvim;
+        config = "require'lsp-format'.setup{}";
+        type = "lua";
+      }
+      {
+        plugin = nvim-lspconfig;
+        config = builtins.readFile ./app-configs/nvim/lua/lspconfig.lua;
         type = "lua";
       }
       {
@@ -160,11 +174,6 @@
       {
         plugin = trouble-nvim;
         config = builtins.readFile ./app-configs/nvim/lua/trouble.lua;
-        type = "lua";
-      }
-      {
-        plugin = nvim-lspconfig;
-        config = builtins.readFile ./app-configs/nvim/lua/lspconfig.lua;
         type = "lua";
       }
       {
@@ -224,6 +233,7 @@
     initExtra = ''
       eval $(starship init zsh)
       PATH="$PATH:$HOME/.local/bin"
+      PATH="$PATH:$HOME/.cargo/bin"
     '';
     oh-my-zsh = {
       enable = true;

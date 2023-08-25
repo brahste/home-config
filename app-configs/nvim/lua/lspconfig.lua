@@ -7,6 +7,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Enable rust_analyzer
+nvim_lsp.rust_analyzer.setup{on_attach=require('lsp-format').on_attach, capabilities=capabilities}
 -- Note: the rust-analyzer server is set up in _rust-tools.lua, not here
 
 -- Enable clangd
@@ -63,4 +64,6 @@ vim.diagnostic.config({
 vim.o.updatetime = 250
 
 -- Uncomment below for pop-up diagnostics
--- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+-- Beware, this often gets in the way of the LSP display
+-- See keybindings.lua -> use Ctrl+L to view diagnostics
+--vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
