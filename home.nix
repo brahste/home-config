@@ -86,7 +86,7 @@
     ncdu
 
     # Desktop applications
-    thunderbird
+    #thunderbird
     slack
     obsidian
     signal-desktop
