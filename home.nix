@@ -125,11 +125,16 @@
       nvim-treesitter-parsers.cpp
       nvim-treesitter-textobjects
       nvim-treesitter.withAllGrammars
-      copilot-vim
       nvim-web-devicons
       bufferline-nvim
       plenary-nvim
       telescope-fzf-native-nvim
+     # copilot-vim
+      {
+        plugin = copilot-lua;
+        config = builtins.readFile ./app-configs/nvim/lua/copilot.lua;
+        type = "lua";
+      }
       {
         plugin = nvim-cmp;
         config = builtins.readFile ./app-configs/nvim/lua/cmp.lua;
@@ -139,7 +144,16 @@
       cmp-buffer
       cmp-path
       cmp-cmdline
-      lspkind-nvim
+      {
+        plugin = copilot-cmp;
+        config = "require'copilot_cmp'.setup{}";
+        type = "lua";
+      }
+      {
+        plugin = lspkind-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/lspkind.lua;
+        type = "lua";
+      }
       luasnip
       vim-commentary
       lazygit-nvim

@@ -23,8 +23,9 @@ cmp.setup({
   },
 
   sources = {
-    { name = 'luasnip', group_index = 2 },
+    { name = 'copilot', group_index = 2 },
     { name = 'nvim_lsp', group_index = 2 },
+    { name = 'luasnip', group_index = 2 },
     { name = 'path', group_index = 2 },
     { name = 'buffer', group_index = 3 },
   },
@@ -36,10 +37,11 @@ cmp.setup({
       maxwidth = 80,
       ellipsis_char = '…',
       menu = {
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[API]",
-        path = "[path]",
-        buffer = "[buf]",
+        copilot = "copilot",
+        nvim_lsp = "lsp",
+        nvim_lua = "api",
+        path = "path",
+        buffer = "buffer",
       }
     }
   },
@@ -53,5 +55,29 @@ cmp.setup({
   experimental = {
     native_menu = false,
     ghost_text = true
+  },
+
+  -- ref: https://github.com/zbirenbaum/copilot-cmp/#comparators
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      require("copilot_cmp.comparators").prioritize,
+      -- Below is the default comparitor list and order for nvim-cmp
+      cmp.config.compare.offset,
+      -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
+  },
+
+  window = {
+    documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
   },
 })
