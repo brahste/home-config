@@ -7,6 +7,7 @@ def remove_comments(lines):
 
     for line in lines:
         line = line.strip()
+        line = line.replace(" ", "")
 
         if in_comment_block:
             if line.endswith("*/"):
