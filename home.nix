@@ -91,6 +91,7 @@
     obsidian
     signal-desktop
     gimp
+    remmina
   ];
   
   programs.direnv.enable = true;

@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Function to display the help message
+show_help() {
+    echo "Usage: $0 APPIMAGE_PATH [--as NEW_FILENAME]"
+    echo "Options:"
+    echo "  APPIMAGE_PATH  Specify the path to the AppImage file"
+    echo "  --as NEW_FILENAME  Rename the AppImage to NEW_FILENAME after moving"
+    echo "  -h, --help     Show this help message"
+}
+
+# Check for the correct number of arguments
+if [[ $# -eq 0 || "$1" == "--help" || "$1" == "-h" ]]; then
+    show_help
+    exit 0
+fi
+
+# Initialize variables
+new_filename=""
+
+# Process command line options
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --as)
+            shift
+            new_filename="$1"
+            shift
+            ;;
+        *)
+            if [ -z "$appimage_path" ]; then
+                appimage_path="$1"
+                shift
+            else
+                show_help
+                exit 1
+            fi
+            ;;
+    esac
+done
+
+# Check if the provided file exists
+if [ ! -f "$appimage_path" ]; then
+    echo "Error: The specified file does not exist."
+    show_help
+    exit 1
+fi
+
+# Make the AppImage file executable
+chmod +x "$appimage_path"
+
+# Determine the target filename
+if [ -z "$new_filename" ]; then
+    target_filename="$(basename "$appimage_path")"
+else
+    target_filename="$new_filename"
+fi
+
+# Move the AppImage to ~/.local/bin
+mkdir -p ~/.local/bin
+mv "$appimage_path" ~/.local/bin/"$target_filename"
+
+echo "AppImage has been made executable and moved to ~/.local/bin as '$target_filename'."
+
