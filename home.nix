@@ -156,6 +156,11 @@
         type = "lua";
       }
       luasnip
+      {
+        plugin = rust-tools-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/rust-tools.lua;
+        type = "lua";
+      }
       vim-commentary
       lazygit-nvim
       barbar-nvim

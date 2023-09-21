@@ -7,7 +7,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Enable rust_analyzer
-nvim_lsp.rust_analyzer.setup{on_attach=require('lsp-format').on_attach, capabilities=capabilities}
+-- nvim_lsp.rust_analyzer.setup{on_attach=require('lsp-format').on_attach, capabilities=capabilities}
 -- Note: the rust-analyzer server is set up in _rust-tools.lua, not here
 
 -- Enable clangd
