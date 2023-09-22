@@ -234,8 +234,8 @@
       vpn="nordvpn";
       cdv="cd ~/dev";
       cdh="cd ~/.config/home-manager";
+      vim-tmp="vim ~/tmp/$(dateiso).txt";
       ls="lsd";
-      ll="lsd -l";
       la="lsd -la";
       lt="lsd --tree";
       lta="lsd --tree --all";
