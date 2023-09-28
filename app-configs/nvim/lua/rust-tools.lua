@@ -26,6 +26,11 @@
 local rt = require("rust-tools")
 
 rt.setup({
+  inlay_hints = {
+    show_parameter_hints = true,
+    parameter_hints_prefix = "+ ",
+    other_hints_prefix = "~ ",
+  },
   server = {
     on_attach=require('lsp-format').on_attach,
     settings = {
