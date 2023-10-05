@@ -42,8 +42,8 @@
     nixfmt
 
     # Languages
-    #python310
-    #python310Packages.pip
+    python310
+    python310Packages.pip
     nodejs_18
 
     # Rust development tools
