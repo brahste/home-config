@@ -35,7 +35,7 @@
     lazydocker
     starship
     awscli2
-    kubectl
+    #kubectl
 
     # Language servers, formatters, linters
     nil
@@ -51,9 +51,9 @@
     #rust-analyzer
 
     # C/C++ development tools
-    gnumake
-    cmake
-    pkg-config
+    #gnumake
+    #cmake
+    #pkg-config
     #clang_15
     #gcc12
 
@@ -69,7 +69,7 @@
     socat
 
     # Security
-    openssl
+    #openssl
 
     # Battery management
     #tlp

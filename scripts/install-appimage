@@ -2,11 +2,16 @@
 
 # Function to display the help message
 show_help() {
+    echo "AppImage installer. By default, programs are installed to ~/.local/bin"
+    echo ""
     echo "Usage: $0 APPIMAGE_PATH [--as NEW_FILENAME]"
+    echo ""
     echo "Options:"
-    echo "  APPIMAGE_PATH  Specify the path to the AppImage file"
-    echo "  --as NEW_FILENAME  Rename the AppImage to NEW_FILENAME after moving"
+    echo "  APPIMAGE_PATH  Path to the AppImage file"
+    echo "  --as NEW_FILENAME  Install the AppImage with NEW_FILENAME"
     echo "  -h, --help     Show this help message"
+    echo ""
+    echo "Warning: If you move the file to a "
 }
 
 # Check for the correct number of arguments

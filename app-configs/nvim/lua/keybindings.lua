@@ -26,6 +26,10 @@ keymap('n', '<c-h>', '<c-w>h', opts)
 keymap('n', '<c-k>', '<c-w>k', opts)
 keymap('n', '<c-l>', '<c-w>l', opts)
 
+--- Full word backspace and delete
+keymap('i', '<A-Del>', '<space><esc>ce', opts)
+keymap('i', '<A-BS>', '<esc><space>cb', opts)
+
 -- LSP Keybindings
 nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
 nkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>')
