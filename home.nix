@@ -42,20 +42,24 @@
     nixfmt
 
     # Languages
-    python310
-    python310Packages.pip
+    python311
+    python311Packages.pip
     nodejs_18
+    nodePackages.pnpm
 
     # Rust development tools
+    # I prefer to manage Rust with it's native toolchain, otherwise LSPs and
+    # cross compilation are more cumbersome (using Nix).
     #rustup
     #rust-analyzer
 
     # C/C++ development tools
     #gnumake
-    #cmake
+    cmake
     #pkg-config
     #clang_15
-    #gcc12
+    gcc12
+    ninja
 
     # Terminal utilities
     jq
@@ -77,6 +81,8 @@
     # Networking & downloads
     wget
     curlWithGnuTls
+    redis
+    redisinsight
 
     # Security
     bitwarden-cli
@@ -165,6 +171,11 @@
       lazygit-nvim
       barbar-nvim
       # statix # how work?
+      {
+        plugin = autoclose-nvim;
+        config ="require'autoclose'.setup{}";
+        type = "lua";
+      }
       {
         plugin = mason-nvim;
         config = builtins.readFile ./app-configs/nvim/lua/mason.lua;

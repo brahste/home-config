@@ -8,7 +8,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Enable rust_analyzer
 -- nvim_lsp.rust_analyzer.setup{on_attach=require('lsp-format').on_attach, capabilities=capabilities}
--- Note: the rust-analyzer server is set up in _rust-tools.lua, not here
+-- NOTE: the rust-analyzer server is set up in _rust-tools.lua, not here
 
 -- Enable clangd
 nvim_lsp.clangd.setup{on_attach=on_attach, capabilities=capabilities}
@@ -30,7 +30,7 @@ nvim_lsp.nil_ls.setup{on_attach=on_attach, capabilities=capabilities}
 
 -- Enable docker-language-server
 -- nvim_lsp.dockerls.setup{capabilities=capabilities}
-require'lspconfig'.dockerls.setup{}
+nvim_lsp.dockerls.setup{}
 
 -- Enable Python language server
 -- Note: To use pyright you need to set the path to python3 via something like
