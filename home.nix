@@ -218,6 +218,11 @@
         type = "lua";
       }
       {
+        plugin = autoclose-nvim;
+        config = "require'autoclose'.setup{}";
+        type = "lua";
+      }
+      {
         plugin = lualine-nvim;
         config = builtins.readFile ./app-configs/nvim/lua/lualine.lua;
         type = "lua";
