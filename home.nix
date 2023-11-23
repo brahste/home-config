@@ -270,6 +270,7 @@
       eval $(starship init zsh)
       PATH="$PATH:$HOME/.local/bin"
       PATH="$PATH:$HOME/.cargo/bin"
+      SUDO_EDITOR=$(which nvim)
     '';
     oh-my-zsh = {
       enable = true;

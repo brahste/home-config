@@ -2,4 +2,4 @@ Host gitlab.com
   User git
   HostName gitlab.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_ed25519_oor
+  IdentityFile ~/.ssh/id_ed25519_bstef_gitlab
