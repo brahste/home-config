@@ -32,7 +32,7 @@ rt.setup({
     other_hints_prefix = "~ ",
   },
   server = {
-    on_attach=require('lsp-format').on_attach,
+    -- on_attach=require('lsp-format').on_attach,
     settings = {
       ['rust-analyzer'] = {
         checkOnSave = true,

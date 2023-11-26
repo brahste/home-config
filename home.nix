@@ -35,6 +35,7 @@
     lazydocker
     starship
     awscli2
+    postman
     #kubectl
 
     # Language servers, formatters, linters
@@ -194,12 +195,17 @@
         config = builtins.readFile ./app-configs/nvim/lua/mason.lua;
         type = "lua";
       }
-      mason-lspconfig-nvim
       {
-        plugin = lsp-format-nvim;
-        config = "require'lsp-format'.setup{}";
+        plugin = formatter-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/formatter.lua;
         type = "lua";
+        
       }
+      #{home
+      #  plugin = lsp-format-nvim;
+      #  config = "require'lsp-format'.setup{}";
+      #  type = "lua";
+      #}
       {
         plugin = nvim-lspconfig;
         config = builtins.readFile ./app-configs/nvim/lua/lspconfig.lua;
@@ -326,6 +332,7 @@
         aa = "!git add --all && git status";
       };
       core.editor = "nvim";
+      init.defaultBranch = "main";
     };
   };
 

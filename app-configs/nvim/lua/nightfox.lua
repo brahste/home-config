@@ -4,7 +4,9 @@ local palettes = {
   nightfox = {
     cyan = { base = "#75bd93", bright = "#75bd93", dim = "#75bd93" },
     yellow = { base = "#f1bf4b", bright = "#f1bf4b", dim = "#f1bf4b" },
-    red = { base = "#d96840", bright = "#d96840", dim = "#d96840" },
+    -- red = { base = "#d96840", bright = "#d96840", dim = "#d96840" },
+    red = { base = "#f99b48", bright = "#f99b48", dim = "#f99b48" },
+    -- pink = { base = "#d96840", bright = "#d96840", dim = "#d96840" },
     pink = { base = "#f99b48", bright = "#f99b48", dim = "#f99b48" },
     orange = { base = "#f99b48", bright = "#f99b48", dim = "#f99b48" },
   }
