@@ -35,8 +35,9 @@
     lazydocker
     starship
     awscli2
-    postman
-    #kubectl
+    #postman
+    kubectl
+    minikube
 
     # Language servers, formatters, linters
     nil
@@ -93,7 +94,7 @@
     wget
     curlWithGnuTls
     redis
-    redisinsight
+    #redisinsight
 
     # Security
     bitwarden-cli

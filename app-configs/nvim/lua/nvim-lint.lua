@@ -4,6 +4,7 @@ require('lint').linters_by_ft = {
   cpp = {'cpplint',},
   cmake = {'cmakelint',},
   dockerfile = {'hadolint',},
+  yaml = {'yamllint',},
 }
 
 -- Lint on save

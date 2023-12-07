@@ -1,13 +1,10 @@
--- All language servers installed at ~/.local/share/nvim/lsp_servers/
--- and symlinked to ~/.local/bin/
+-- Language servers are managed via :Mason install candidates
 
 local nvim_lsp = require'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- Enable rust_analyzer
--- nvim_lsp.rust_analyzer.setup{on_attach=require('lsp-format').on_attach, capabilities=capabilities}
 -- NOTE: the rust-analyzer server is set up in _rust-tools.lua, not here
 
 -- Enable clangd
@@ -29,8 +26,9 @@ nvim_lsp.cssls.setup{on_attach=on_attach, capabilities=capabilities}
 nvim_lsp.nil_ls.setup{on_attach=on_attach, capabilities=capabilities}
 
 -- Enable docker-language-server
--- nvim_lsp.dockerls.setup{capabilities=capabilities}
-nvim_lsp.dockerls.setup{}
+nvim_lsp.dockerls.setup{on_attach=on_attach, capabilities=capabilities}
+nvim_lsp.docker_compose_language_service.setup{on_attach=on_attach, capabilities=capabilities}
+
 
 -- Enable Python language server
 -- Note: To use pyright you need to set the path to python3 via something like
@@ -44,6 +42,9 @@ nvim_lsp.ansiblels.setup({
   capabilities=capabilities,
   filetypes = {"yaml.ansible"}
 })
+
+-- Enable yaml-language-server, see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
+nvim_lsp.yamlls.setup{on_attach=on_attach, capabilities=capabilities}
 
 -- Protocol Buffers language server
 nvim_lsp.bufls.setup{on_attach=on_attach, capabilities=capabilities}
