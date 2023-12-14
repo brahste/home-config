@@ -1,4 +1,4 @@
-Host gitlab.com
+Host gitlab.com-brahste
   User git
   HostName gitlab.com
   PreferredAuthentications publickey

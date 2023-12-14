@@ -1,4 +1,4 @@
-Host github.com
+Host github.com-brahste
   User git
   HostName github.com
   PreferredAuthentications publickey

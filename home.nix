@@ -14,7 +14,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 
   targets.genericLinux.enable = true;
 
@@ -46,6 +46,8 @@
     python311Packages.pip
     nodejs_18
     nodePackages.pnpm
+    go
+    protobuf
 
     # Rust development tools
     # I prefer to manage Rust with it's native toolchain, otherwise LSPs and
@@ -54,12 +56,18 @@
     #rust-analyzer
 
     # C/C++ development tools
-    #gnumake
+   # gnumake
     cmake
-    #pkg-config
-    #clang_15
-    gcc12
+    pkg-config
+    clang_15
+   # llvmPackages_15.libcxxStdenv
+   # llvmPackages_15.libcxx
+   # llvmPackages_15.libcxxabi
+   # gcc13
+    #glibc
     ninja
+    udev
+    
 
     # Terminal utilities
     jq
@@ -105,7 +113,11 @@
 
   programs.ssh = {
     enable = true;
-    includes = [ "./home-config" ];
+    includes = [ 
+      "./config-bstef-gitlab"
+      "./config-brahste-gitlab"
+      "./config-brahste-github"
+    ];
   };
 
   programs.terminator = {

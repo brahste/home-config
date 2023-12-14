@@ -1,4 +1,4 @@
-Host gitlab.com
+Host gitlab.com-bstef
   User git
   HostName gitlab.com
   PreferredAuthentications publickey
