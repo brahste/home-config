@@ -1,6 +1,7 @@
 -- Language servers are managed via :Mason install candidates
 
 local nvim_lsp = require'lspconfig'
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -60,6 +61,9 @@ vim.diagnostic.config({
   virtual_text = false,
   float = { border = "rounded" }
 })
+
+-- Border windows in Lsp UI
+require('lspconfig.ui.windows').default_options.border = 'rounded'
 
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
