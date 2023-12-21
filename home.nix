@@ -79,6 +79,8 @@
     vivid
     nmap
     socat
+    thefuck
+    du-dust
 
     # Security
     #openssl
@@ -107,7 +109,7 @@
     gimp
     remmina
   ];
-  
+
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
@@ -128,7 +130,6 @@
   programs.vscode = {
     enable = true;
   };
-
 
   programs.neovim = {
     enable = true;
@@ -256,7 +257,7 @@
     autocd = true;
     sessionVariables = {
       LS_COLORS="$(vivid generate one-dark)";
-      PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig";
+      #PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig";
     };
     shellAliases = {
       vpn="nordvpn";
