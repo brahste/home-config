@@ -8,6 +8,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- NOTE: the rust-analyzer server is set up in _rust-tools.lua, not here
 
+
 -- Enable clangd
 nvim_lsp.clangd.setup{on_attach=on_attach, capabilities=capabilities}
 
@@ -46,6 +47,9 @@ nvim_lsp.ansiblels.setup({
 
 -- Enable yaml-language-server, see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
 nvim_lsp.yamlls.setup{on_attach=on_attach, capabilities=capabilities}
+
+-- Enable XML
+nvim_lsp.lemminx.setup{on_attach=on_attach, capabilities=capabilities}
 
 -- Protocol Buffers language server
 nvim_lsp.bufls.setup{on_attach=on_attach, capabilities=capabilities}

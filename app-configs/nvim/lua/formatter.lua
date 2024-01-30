@@ -1,6 +1,15 @@
 local util = require "formatter.util"
 require('formatter').setup({
   filetype = {
+    rust = {
+      function()
+        return {
+          exe = "rustfmt",
+          args = { "--edition 2021" },
+          stdin = true,
+        }
+      end
+    },
     python = {
       -- installed via :Mason -> black
        function()

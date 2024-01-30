@@ -38,6 +38,9 @@
     #postman
     kubectl
     minikube
+    gnome.gnome-screenshot
+    gnome.gnome-tweaks
+    gnome.gnome-characters
 
     # Language servers, formatters, linters
     nil
@@ -49,7 +52,7 @@
     nodejs_18
     nodePackages.pnpm
     go
-    protobuf
+    #protobuf
 
     # Rust development tools
     # I prefer to manage Rust with it's native toolchain, otherwise LSPs and
@@ -59,16 +62,16 @@
 
     # C/C++ development tools
    # gnumake
-    cmake
-    pkg-config
-    clang_15
+    #cmake
+    #pkg-config
+    #clang_15
    # llvmPackages_15.libcxxStdenv
    # llvmPackages_15.libcxx
    # llvmPackages_15.libcxxabi
    # gcc13
     #glibc
-    ninja
-    udev
+    #ninja
+    #udev
     
 
     # Terminal utilities
@@ -107,7 +110,6 @@
     #thunderbird
     slack
     obsidian
-    signal-desktop
     gimp
     remmina
   ];
@@ -202,11 +204,6 @@
         type = "lua";
         
       }
-      #{home
-      #  plugin = lsp-format-nvim;
-      #  config = "require'lsp-format'.setup{}";
-      #  type = "lua";
-      #}
       {
         plugin = nvim-lspconfig;
         config = builtins.readFile ./app-configs/nvim/lua/lspconfig.lua;
