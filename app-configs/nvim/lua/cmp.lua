@@ -23,8 +23,9 @@ cmp.setup({
   },
 
   sources = {
-    { name = 'copilot', group_index = 2 },
+    --{ name = 'copilot', group_index = 2 },
     { name = 'nvim_lsp', group_index = 2 },
+    { name = 'nvim_lua', group_index = 2 },
     { name = 'luasnip', group_index = 2 },
     { name = 'path', group_index = 2 },
     { name = 'buffer', group_index = 3 },
@@ -37,7 +38,7 @@ cmp.setup({
       maxwidth = 80,
       ellipsis_char = '…',
       menu = {
-        copilot = "copilot",
+        --copilot = "copilot",
         nvim_lsp = "lsp",
         nvim_lua = "api",
         path = "path",
@@ -61,7 +62,7 @@ cmp.setup({
   sorting = {
     priority_weight = 2,
     comparators = {
-      require("copilot_cmp.comparators").prioritize,
+      --require("copilot_cmp.comparators").prioritize,
       -- Below is the default comparitor list and order for nvim-cmp
       cmp.config.compare.offset,
       -- cmp.config.compare.scopes, --this is commented in nvim-cmp too

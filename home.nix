@@ -30,6 +30,7 @@
 
   home.packages = with pkgs; [
     # General development tools
+    lunarvim
     xclip
     lazygit
     lazydocker
@@ -154,11 +155,11 @@
       plenary-nvim
       telescope-fzf-native-nvim
      # copilot-vim
-      {
-        plugin = copilot-lua;
-        config = builtins.readFile ./app-configs/nvim/lua/copilot.lua;
-        type = "lua";
-      }
+     # {
+     #   plugin = copilot-lua;
+     #   config = builtins.readFile ./app-configs/nvim/lua/copilot.lua;
+     #   type = "lua";
+     # }
       {
         plugin = nvim-cmp;
         config = builtins.readFile ./app-configs/nvim/lua/cmp.lua;
@@ -168,20 +169,30 @@
       cmp-buffer
       cmp-path
       cmp-cmdline
-      {
-        plugin = copilot-cmp;
-        config = "require'copilot_cmp'.setup{}";
-        type = "lua";
-      }
+     # {
+     #   plugin = copilot-cmp;
+     #   config = "require'copilot_cmp'.setup{}";
+     #   type = "lua";
+     # }
       {
         plugin = lspkind-nvim;
         config = builtins.readFile ./app-configs/nvim/lua/lspkind.lua;
         type = "lua";
       }
       luasnip
+      #{
+      #  plugin = rust-tools-nvim;
+      #  config = builtins.readFile ./app-configs/nvim/lua/rust-tools.lua;
+      #  type = "lua";
+      #}
       {
-        plugin = rust-tools-nvim;
-        config = builtins.readFile ./app-configs/nvim/lua/rust-tools.lua;
+        plugin = rustaceanvim;
+        config = builtins.readFile ./app-configs/nvim/lua/rustaceanvim.lua;
+        type = "lua";
+      }
+      {
+        plugin = lsp-inlayhints-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/lsp-inlayhints.lua;
         type = "lua";
       }
       vim-commentary

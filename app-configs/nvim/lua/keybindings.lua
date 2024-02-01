@@ -67,6 +67,10 @@ keymap('n', '<leader>bb', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 keymap('n', 'L', '<cmd>lua vim.diagnostic.open_float(nil, {focus=false})<CR>', opts)
 
+-- Rust bindings
+keymap('n', '<leader>rio', ':RustEnableInlayHints<CR>', opts)
+keymap('n', '<leader>rii', ':RustDisableInlayHints<CR>', opts)
+
 -- Debug Adapter commands
 -- vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 -- vim.keymap.set('n', '<F6>', function() require('dap').step_over() end)
