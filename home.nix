@@ -39,9 +39,13 @@
     #postman
     kubectl
     minikube
+    devbox
+
+
     gnome.gnome-screenshot
     gnome.gnome-tweaks
     gnome.gnome-characters
+    gnomeExtensions.gtk3-theme-switcher
 
     # Language servers, formatters, linters
     nil
@@ -66,6 +70,7 @@
     #cmake
     #pkg-config
     #clang_15
+    #bear
    # llvmPackages_15.libcxxStdenv
    # llvmPackages_15.libcxx
    # llvmPackages_15.libcxxabi
@@ -87,6 +92,10 @@
     socat
     thefuck
     du-dust
+    onefetch
+    fastfetch
+    starfetch
+    alacritty
 
     # Security
     #openssl
@@ -110,6 +119,7 @@
     # Desktop applications
     #thunderbird
     slack
+    discord
     obsidian
     gimp
     remmina
@@ -221,8 +231,8 @@
         type = "lua";
       }
       {
-        plugin = nightfox-nvim;
-        config = builtins.readFile ./app-configs/nvim/lua/nightfox.lua;
+        plugin = kanagawa-nvim;
+        config = builtins.readFile ./app-configs/nvim/lua/colorscheme.lua;
         type = "lua";
       }
       {
@@ -248,6 +258,11 @@
       {
         plugin = autoclose-nvim;
         config = "require'autoclose'.setup{}";
+        type = "lua";
+      }
+      {
+        plugin = indent-blankline-nvim;
+        config = "require'ibl'.setup{}";
         type = "lua";
       }
       {
@@ -299,6 +314,36 @@
       PATH="$PATH:$HOME/.local/bin"
       PATH="$PATH:$HOME/.cargo/bin"
       SUDO_EDITOR=$(which nvim)
+      # git repository greeter
+      last_repository=
+      check_directory_for_new_repository() {
+              current_repository=$(git rev-parse --show-toplevel 2> /dev/null)
+              
+              if [ "$current_repository" ] && \
+                 [ "$current_repository" != "$last_repository" ]; then
+                      onefetch
+              fi
+              last_repository=$current_repository
+      }
+      cd() {
+              builtin cd "$@"
+              check_directory_for_new_repository
+      }
+
+      # optional, greet also when opening shell directly in repository directory
+      # adds time to startup
+      check_directory_for_new_repository
+
+      # Show new terminal splash screens, see also `motd`
+      # starfetch -c yellow -r
+
+      fastfetch --structure Disk:PublicIP --data-raw " " --logo-padding 0 --color yellow
+
+      ip --color -br a | awk '{if ($0 ~ /UP/) printf " \033[33;1mLocal IP\033[0m:  %s\n", $0}'
+
+      nordvpn settings | awk -F ":" '{half_length = index($0, ":"); if (NR == 1 || $0 ~ /Firewall:|Kill Switch|Meshnet/) printf " \033[33;1mVPN %s\033[0m:%s\t\n", substr($0, 1, half_length-1), substr($0, half_length+1)}' | tail +2
+
+      date +%Z | awk '{printf " \033[33;1mTime Zone\033[0m: %s\n", $0}'
     '';
     oh-my-zsh = {
       enable = true;

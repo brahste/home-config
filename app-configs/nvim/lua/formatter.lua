@@ -71,7 +71,27 @@ require('formatter').setup({
             stdin = true,
           }
       end
-    }
+    },
+    html = {
+      -- Installed via :Mason -> prettierd
+      function()
+          return {
+            exe = "prettierd",
+            args = { util.escape_path(util.get_current_buffer_file_path()) },
+            stdin = true,
+          }
+      end
+    },
+    astro = {
+      -- Installed via :Mason -> prettier
+      function()
+          return {
+            exe = "prettier",
+            args = { util.escape_path(util.get_current_buffer_file_path()) },
+            stdin = true,
+          }
+      end
+    },
   },
   ["*"] = {
     -- "formatter.filetypes.any" defines default configurations for any

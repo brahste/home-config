@@ -23,6 +23,7 @@ vim.g.rustaceanvim = {
     settings = {
       -- rust-analyzer language server configuration
       ['rust-analyzer'] = {
+        joinLines_unwrapTrivialBlock = "false",
       },
     },
   },

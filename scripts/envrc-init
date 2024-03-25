@@ -7,7 +7,7 @@ function show_help() {
     echo ""
     echo "Options:"
     echo "  --brahste-github  Initialize for brahste's GitHub profile."
-    echo "  --brahste-gitlab  Initialize for brahste's GitLab profile."
+    echo "  --bstefanuk-gitlab  Initialize for brahste's GitLab profile."
     echo "  --bstef-gitlab    Initialize for bstef's GitLab profile."
     echo "  --help            Show this help message."
 }
@@ -43,8 +43,8 @@ function main() {
 
     if [ "$1" == "--brahste-github" ]; then
       cp ${ref_envrc_path}/envrc-brahste-github .envrc 
-    elif [ "$1" == "--brahste-gitlab" ]; then
-      cp ${ref_envrc_path}/envrc-brahste-gitlab .envrc 
+    elif [ "$1" == "--bstefanuk-gitlab" ]; then
+      cp ${ref_envrc_path}/envrc-bstefanuk-gitlab .envrc 
     elif [ "$1" == "--bstef-gitlab" ]; then
       cp ${ref_envrc_path}/envrc-bstef-gitlab .envrc 
     else

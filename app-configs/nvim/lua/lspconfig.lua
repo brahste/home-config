@@ -19,8 +19,11 @@ nvim_lsp.bashls.setup{on_attach=on_attach, capabilities=capabilities}
 
 -- Enable JS/TS, HTML, and CSS language servers
 nvim_lsp.tsserver.setup{on_attach=on_attach, capabilities=capabilities}
+nvim_lsp.biome.setup{on_attach=on_attach, capabilities=capabilities}
 nvim_lsp.html.setup{on_attach=on_attach, capabilities=capabilities}
 nvim_lsp.cssls.setup{on_attach=on_attach, capabilities=capabilities}
+nvim_lsp.tailwindcss.setup{on_attach=on_attach, capabilities=capabilities}
+nvim_lsp.astro.setup{on_attach=on_attach, capabilities=capabilities}
 -- nvim_lsp.jsonls.setup{on_attach=require('lsp-format').on_attach, capabilities=capabilities}
 
 -- Enable Nix lsp
@@ -29,6 +32,9 @@ nvim_lsp.nil_ls.setup{on_attach=on_attach, capabilities=capabilities}
 -- Enable docker-language-server
 nvim_lsp.dockerls.setup{on_attach=on_attach, capabilities=capabilities}
 nvim_lsp.docker_compose_language_service.setup{on_attach=on_attach, capabilities=capabilities}
+
+-- Autotools to support Makefile and more
+nvim_lsp.autotools_ls.setup{on_attach=on_attach, capabilities=capabilities}
 
 
 -- Enable Python language server
@@ -61,7 +67,7 @@ end
 
 -- Diagnostics configurations
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
   float = { border = "rounded" }
 })
 
@@ -75,4 +81,4 @@ vim.o.updatetime = 250
 -- Uncomment below for pop-up diagnostics
 -- Beware, this often gets in the way of the LSP display
 -- See keybindings.lua -> use Ctrl+L to view diagnostics
-vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+-- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
