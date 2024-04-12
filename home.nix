@@ -210,11 +210,6 @@
       barbar-nvim
       # statix # how work?
       {
-        plugin = autoclose-nvim;
-        config ="require'autoclose'.setup{}";
-        type = "lua";
-      }
-      {
         plugin = mason-nvim;
         config = builtins.readFile ./app-configs/nvim/lua/mason.lua;
         type = "lua";
